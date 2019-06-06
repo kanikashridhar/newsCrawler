@@ -1,5 +1,7 @@
 *.pyc
 *.vscode
 venv/*
+Log/*
+Output/*
 static/*
 .DS_Store
