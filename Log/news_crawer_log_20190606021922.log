@@ -1,0 +1,771 @@
+2019-06-06 02:19:22 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: news_crawler)
+2019-06-06 02:19:22 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.7.2 (default, Jan 13 2019, 12:50:15) - [Clang 10.0.0 (clang-1000.11.45.5)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1c  28 May 2019), cryptography 2.7, Platform Darwin-17.4.0-x86_64-i386-64bit
+2019-06-06 02:19:22 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'news_crawler', 'LOG_FILE': 'Log/news_crawer_log_20190606021922.log', 'NEWSPIDER_MODULE': 'news_crawler.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['news_crawler.spiders']}
+2019-06-06 02:19:22 [scrapy.extensions.telnet] INFO: Telnet Password: abd1729813792e80
+2019-06-06 02:19:22 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-06 02:19:22 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-06 02:19:22 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-06 02:19:22 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_crawler.pipelines.NewsCrawlerPipeline',
+ 'news_crawler.pipelines.NewsTextPipeline',
+ 'news_crawler.pipelines.DropIfEmptyPipeline',
+ 'news_crawler.pipelines.DuplicatesPipeline',
+ 'news_crawler.pipelines.MongoPipeline']
+2019-06-06 02:19:22 [scrapy.core.engine] INFO: Spider opened
+2019-06-06 02:19:22 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-06 02:19:22 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-06 02:19:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/robots.txt> (referer: None)
+2019-06-06 02:19:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news> (referer: None)
+2019-06-06 02:19:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/video_and_audio/headlines> (referer: https://www.bbc.com/news)
+2019-06-06 02:19:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/world/australia> (referer: https://www.bbc.com/news)
+2019-06-06 02:19:23 [root] INFO: Parsing URL: https://www.bbc.com/news/video_and_audio/headlines
+2019-06-06 02:19:23 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.bbc.com:443
+2019-06-06 02:19:23 [urllib3.connectionpool] DEBUG: https://www.bbc.com:443 "GET /news/video_and_audio/headlines HTTP/1.1" 200 45597
+2019-06-06 02:19:24 [py.warnings] WARNING: /Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/readability/htmls.py:117: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  raw_html = str_(tostring(doc.body or doc))
+
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - .vxp-carousel__container>.vxp-carousel__pagination
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--messengerdesktop.vxp-share__channel-click-extracted--messengerdesktop>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-desktop.vxp-share__channel-out--email.vxp-share__channel-click-extracted--email>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--facebook.vxp-share__channel-click-extracted--facebook>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--whatsapp.vxp-share__channel-click-extracted--whatsapp>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--messengermobile.vxp-share__channel-click-extracted--messengermobile>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-sharetools.sharetools>li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - li.vxp-share__channel-mobile.vxp-share__channel-out--twitter.vxp-share__channel-click-extracted--twitter>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.vxp-share__channels>li.vxp-share__channel.vxp-share__channel--twitter.vxp-share__channel-click--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - a.vxp-share__channel-link>span.vxp-share__icon.vxp-share__icon--twitter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - #site-container>#core-navigation.navigation--footer
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - #core-navigation.navigation--footer>h2.navigation--footer__heading
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - .direction>#orb-footer.orb-footer
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - #orb-footer.orb-footer>#navp-orb-footer-promo
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - #orb-aside.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>h2.orb-footer-lead
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>.orb-footer-primary-links
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - #orb-contentinfo.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-terms
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-about
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-privacy
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-cookies
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-accessibility
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-parental
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-contact
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-newsletter
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removing unlikely candidate - small>span.orb-footer-links
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item.vxp-carousel__item--selected>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item.vxp-carousel__item--selected link density 0.477 -> -0.967
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.530 -> -0.870
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.467 -> -0.987
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.471 -> -0.979
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.499 -> -0.927
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.509 -> -0.909
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.495 -> -0.934
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.501 -> -0.924
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.499 -> -0.926
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.519 -> -0.889
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.473 -> -0.974
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.492 -> -0.940
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -17.560 .vxp-column--single>.vxp-media__player link density 0.158 -> -14.787
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  6.220 .vxp-media__container>.vxp-column--single link density 0.307 ->  4.308
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -8.050 .vxp-media__body>.vxp-media__summary link density 0.000 -> -8.050
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch 10.975 .vxp-column--single>.vxp-media__body link density 0.323 ->  7.435
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.435 .vxp-column--single>.vxp-media__body
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item.vxp-carousel__item--selected>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removed  0.000 .vxp-share__panel.arrow-top>ul.vxp-share__channels with weight 0 cause it has too many links 0.716 for its weight 0.
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removed .vxp-media__share-tools>ul.vxp-sharetools.sharetools with score  0.000 and weight -25
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removed .vxp-media__body>ul.vxp-media__info-list.mini-info-list with score  0.000 and weight -25
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removed .vxp-media__body>.vxp-media__share-tools with score  0.000 and weight -25
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removed .vxp-media__body>.vxp-media__summary with score -8.050 and weight -25
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removed  0.000 div{01}>.vxp-media__body with weight 0 cause it has too short content length 22 without a single image.
+2019-06-06 02:19:24 [readability.readability] DEBUG: Removed  0.000 body>div{01} with weight 0 cause it has too short content length 0 without a single image.
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -0.720 .orb-nav-section.orb-nav-search>form#orb-search-form.b-f link density 0.000 -> -0.720
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  6.140 .orb-nav-pri-container.b-r.b-g-p>.orb-nav-section.orb-nav-search link density 0.176 ->  5.056
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item.vxp-carousel__item--selected>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item.vxp-carousel__item--selected link density 0.567 -> -0.801
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.614 -> -0.714
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.559 -> -0.816
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.566 -> -0.803
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.585 -> -0.767
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.594 -> -0.752
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.584 -> -0.770
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.589 -> -0.760
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.588 -> -0.763
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.602 -> -0.736
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.574 -> -0.787
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden link density 0.000 ->  7.300
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -1.850 ul.vxp-carousel__list>li.vxp-carousel__item link density 0.583 -> -0.772
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -17.560 .vxp-column--single>.vxp-media__player link density 0.158 -> -14.787
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch  6.220 .vxp-media__container>.vxp-column--single link density 0.419 ->  3.612
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch -8.050 .vxp-media__body>.vxp-media__summary link density 0.000 -> -8.050
+2019-06-06 02:19:24 [readability.readability] DEBUG: Branch 10.975 .vxp-column--single>.vxp-media__body link density 0.438 ->  6.165
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item.vxp-carousel__item--selected>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] INFO: Top 5 :  7.300 li.vxp-carousel__item>.vxp-carousel__image.vxp-carousel__element--hidden
+2019-06-06 02:19:24 [readability.readability] DEBUG: Not removing .vxp-carousel__image.vxp-carousel__element--hidden>.responsive-image.responsive-image--16by9 of length 5: \n \n 
+2019-06-06 02:19:24 [readability.readability] DEBUG: Not removing div{01}>.vxp-carousel__image.vxp-carousel__element--hidden of length 48: \n \n \n \n \n \n \n Video duration \n 0...
+2019-06-06 02:19:24 [readability.readability] DEBUG: Not removing body>div{01} of length 51: \n \n \n \n \n \n \n Video duration \n 0...
+2019-06-06 02:19:24 [root] INFO: Going to insert Item{'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b"'I didn't know she was nasty about me' - BBC News",
+ 'newsText': '\\n  \\n  ![Keyframe '
+             '#2](https://ichef.bbci.co.uk/news/200/cpsprodpb/00B7/production/_107238100_p07c8j9k.jpg)  '
+             '\\n  \\n \\n  \\n \\n Video duration \\n 0:28\\n  \\n  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/video_and_audio/headlines'}
+2019-06-06 02:19:55 [scrapy.core.scraper] ERROR: Error processing {'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b"'I didn't know she was nasty about me' - BBC News",
+ 'newsText': '\\n  \\n  ![Keyframe '
+             '#2](https://ichef.bbci.co.uk/news/200/cpsprodpb/00B7/production/_107238100_p07c8j9k.jpg)  '
+             '\\n  \\n \\n  \\n \\n Video duration \\n 0:28\\n  \\n  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/video_and_audio/headlines'}
+Traceback (most recent call last):
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/agraj/KANIKA/generic_news_crawler/news_crawler/news_crawler/pipelines.py", line 121, in process_item
+    self.db[self.collection_name].insert_one(dict(item))
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 700, in insert_one
+    session=session),
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 614, in _insert
+    bypass_doc_val, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 602, in _insert_one
+    acknowledged, _insert_command, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1279, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/local/Cellar/python/3.7.2_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1611, in _tmp_session
+    s = self._ensure_session(session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1598, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in __start_session
+    server_session = self._get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1584, in _get_server_session
+    return self._topology.get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 429, in get_server_session
+    None)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 200, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2019-06-06 02:19:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/england> (referer: https://www.bbc.com/news)
+2019-06-06 02:19:55 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET https://www.bbc.com/news/video_and_audio/headlines#page> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2019-06-06 02:19:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/world/africa> (referer: https://www.bbc.com/news)
+2019-06-06 02:19:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/have_your_say> (referer: https://www.bbc.com/news)
+2019-06-06 02:19:55 [root] INFO: Parsing URL: https://www.bbc.com/news/england
+2019-06-06 02:19:55 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.bbc.com:443
+2019-06-06 02:19:55 [urllib3.connectionpool] DEBUG: https://www.bbc.com:443 "GET /news/england HTTP/1.1" 200 36842
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - li.mini-info-list__item>span#dna-comment-count___CPS_48313431.js-comment-count.comment-count
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - li.mini-info-list__item>span#dna-comment-count___CPS_48526209.js-comment-count.comment-count
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - li.simple-list__item>span.simple-list__item-icon.svg-icon.svg-icon--twitter
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - li.bananaquit__item>a.bananaquit__item-link.bananaquit__item-link--twitter
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - #site-container>#core-navigation.navigation--footer
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - #core-navigation.navigation--footer>h2.navigation--footer__heading
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - .direction>#orb-footer.orb-footer
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - #orb-footer.orb-footer>#navp-orb-footer-promo
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - #orb-aside.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>h2.orb-footer-lead
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>.orb-footer-primary-links
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - #orb-contentinfo.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-terms
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-about
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-privacy
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-cookies
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-accessibility
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-parental
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-contact
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-newsletter
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removing unlikely candidate - small>span.orb-footer-links
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 33.020 .buzzard-item>.buzzard__body link density 0.067 -> 30.805
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.510 .buzzard.faux-block-link>.buzzard-item link density 0.515 ->  3.154
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .cormorant-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 33.870 .pigeon-item.faux-block-link>.pigeon-item__body link density 0.364 -> 21.526
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.935 .pigeon__column.pigeon__column--a>.pigeon-item.faux-block-link link density 0.419 ->  4.026
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.960 .pigeon-item.faux-block-link>.pigeon-item__body link density 0.309 -> 22.772
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.480 .pigeon__column.pigeon__column--a>.pigeon-item.faux-block-link link density 0.427 ->  3.712
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.500 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.284 -> 23.277
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.250 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.338 ->  4.138
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.420 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.300 -> 22.694
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.210 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.341 ->  4.090
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.570 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.289 -> 23.147
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.285 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.351 ->  4.081
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.440 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.367 -> 20.532
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.220 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.417 ->  3.626
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.440 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.361 -> 20.737
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.220 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.378 ->  3.866
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.420 .sparrow-item.faux-block-link>.sparrow-item__body link density 0.252 -> 24.253
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.210 .sparrow.sparrow__3.sparrow__light-3>.sparrow-item.faux-block-link link density 0.289 ->  4.412
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 34.350 .skylark-item>.skylark__body link density 0.039 -> 33.007
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.175 .skylark.faux-block-link>.skylark-item link density 0.507 ->  3.536
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  7.410 .responsive-image.responsive-image--16by9>.responsive-image__inner-for-label link density 0.000 ->  7.410
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.205 .condor-item__image>.responsive-image.responsive-image--16by9 link density 0.000 ->  6.205
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.400 .heron__item.faux-block-link>.heron__item-body link density 0.378 -> 20.141
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.200 .heron>.heron__item.faux-block-link link density 0.397 ->  3.739
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch 32.420 .heron__item.faux-block-link>.heron__item-body link density 0.368 -> 20.476
+2019-06-06 02:19:55 [readability.readability] DEBUG: Branch  6.210 .heron>.heron__item.faux-block-link link density 0.391 ->  3.782
+2019-06-06 02:19:55 [readability.readability] INFO: Top 5 : 33.007 .skylark-item>.skylark__body
+2019-06-06 02:19:55 [readability.readability] INFO: Top 5 : 30.805 .buzzard-item>.buzzard__body
+2019-06-06 02:19:55 [readability.readability] INFO: Top 5 : 24.253 .sparrow-item.faux-block-link>.sparrow-item__body
+2019-06-06 02:19:55 [readability.readability] INFO: Top 5 : 23.277 .sparrow-item.faux-block-link>.sparrow-item__body
+2019-06-06 02:19:55 [readability.readability] INFO: Top 5 : 23.147 .sparrow-item.faux-block-link>.sparrow-item__body
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removed  0.000 .skylark__info-list>ul.mini-info-list with weight 0 cause it has too many links 0.241 for its weight 0.
+2019-06-06 02:19:55 [readability.readability] DEBUG: Removed 33.007 .skylark__body>.skylark__info-list with weight 0 cause it has too short content length 5 without a single image.
+2019-06-06 02:19:55 [readability.readability] DEBUG: Not removing div{01}>.skylark__body of length 143: \n Full radio and text commentary on day...
+2019-06-06 02:19:55 [readability.readability] DEBUG: Not removing body>div{01} of length 143: \n Full radio and text commentary on day...
+2019-06-06 02:19:55 [root] INFO: Going to insert Item{'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b'England - BBC News',
+ 'newsText': '\\n  Full radio and text commentary on day three of the latest '
+             'County Championship matches, including second-placed Somerset '
+             'against Surrey.  \\n  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/england'}
+2019-06-06 02:20:08 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-06 02:20:19 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-06 02:20:25 [scrapy.core.scraper] ERROR: Error processing {'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b'England - BBC News',
+ 'newsText': '\\n  Full radio and text commentary on day three of the latest '
+             'County Championship matches, including second-placed Somerset '
+             'against Surrey.  \\n  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/england'}
+Traceback (most recent call last):
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/agraj/KANIKA/generic_news_crawler/news_crawler/news_crawler/pipelines.py", line 121, in process_item
+    self.db[self.collection_name].insert_one(dict(item))
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 700, in insert_one
+    session=session),
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 614, in _insert
+    bypass_doc_val, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 602, in _insert_one
+    acknowledged, _insert_command, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1279, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/local/Cellar/python/3.7.2_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1611, in _tmp_session
+    s = self._ensure_session(session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1598, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in __start_session
+    server_session = self._get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1584, in _get_server_session
+    return self._topology.get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 429, in get_server_session
+    None)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 200, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2019-06-06 02:20:25 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-06 02:20:25 [scrapy.extensions.logstats] INFO: Crawled 7 pages (at 7 pages/min), scraped 0 items (at 0 items/min)
+2019-06-06 02:20:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.bbc.com/news/world/middle_east. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2019-06-06 02:20:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.bbc.com/news/world/middle_east> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: >]
+2019-06-06 02:20:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.bbc.com/news/world/us_and_canada. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2019-06-06 02:20:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.bbc.com/news/world/us_and_canada> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: >]
+2019-06-06 02:20:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.bbc.com/news/world/asia/india. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2019-06-06 02:20:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.bbc.com/news/world/asia/india> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: >]
+2019-06-06 02:20:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.bbc.com/news/world/asia/china. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2019-06-06 02:20:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.bbc.com/news/world/asia/china> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: >]
+2019-06-06 02:20:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.bbc.com/news/world/europe. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2019-06-06 02:20:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.bbc.com/news/world/europe> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: >]
+2019-06-06 02:20:26 [scrapy.core.downloader.handlers.http11] WARNING: Got data loss in https://www.bbc.com/news/world/latin_america. If you want to process broken responses set the setting DOWNLOAD_FAIL_ON_DATALOSS = False -- This message won't be shown in further requests
+2019-06-06 02:20:26 [scrapy.downloadermiddlewares.retry] DEBUG: Retrying <GET https://www.bbc.com/news/world/latin_america> (failed 1 times): [<twisted.python.failure.Failure twisted.internet.error.ConnectionLost: Connection to the other side was lost in a non-clean fashion: Connection lost.>, <twisted.python.failure.Failure twisted.web.http._DataLoss: >]

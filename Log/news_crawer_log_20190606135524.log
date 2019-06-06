@@ -1,0 +1,37 @@
+2019-06-06 13:55:24 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: news_crawler)
+2019-06-06 13:55:24 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.7.2 (default, Jan 13 2019, 12:50:15) - [Clang 10.0.0 (clang-1000.11.45.5)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1c  28 May 2019), cryptography 2.7, Platform Darwin-17.4.0-x86_64-i386-64bit
+2019-06-06 13:55:24 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'news_crawler', 'DUPEFILTER_CLASS': 'scrapy.dupefilters.BaseDupeFilter', 'LOGSTATS_INTERVAL': 0, 'LOG_FILE': 'Log/news_crawer_log_20190606135524.log', 'NEWSPIDER_MODULE': 'news_crawler.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['news_crawler.spiders']}
+2019-06-06 13:55:24 [scrapy.extensions.telnet] INFO: Telnet Password: 431dcf0fabd2dfac
+2019-06-06 13:55:24 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage']
+2019-06-06 13:55:24 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-06 13:55:24 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-06 13:55:25 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_crawler.pipelines.NewsCrawlerPipeline',
+ 'news_crawler.pipelines.NewsTextPipeline',
+ 'news_crawler.pipelines.DropIfEmptyPipeline',
+ 'news_crawler.pipelines.DuplicatesPipeline',
+ 'news_crawler.pipelines.MongoPipeline']
+2019-06-06 13:55:25 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-06 13:55:25 [scrapy.core.engine] INFO: Spider opened
+2019-06-06 13:55:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/robots.txt> (referer: None)
+2019-06-06 13:55:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/sport/cricket/48530840> (referer: None)

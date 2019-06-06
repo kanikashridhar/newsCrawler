@@ -1,0 +1,17 @@
+{
+	"allowed_domains" : ["bbc.com"],
+	"start_urls": [
+		"https://www.bbc.com/sport/cricket"
+	],
+	"rules": [
+		{
+			"allow": ["https://www.bbc.com/sport/cricket"],
+			"follow": true,
+			"callback": "parseItems"
+		}
+	],
+	"paths": {
+        "title" : ["//title/text()"],
+        "author" : [".//div[@class='gel-flag__body']/p[@class='gel-long-primer']/text()"]
+	}
+}

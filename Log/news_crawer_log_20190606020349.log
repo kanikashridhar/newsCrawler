@@ -1,0 +1,1206 @@
+2019-06-06 02:03:49 [scrapy.utils.log] INFO: Scrapy 1.6.0 started (bot: news_crawler)
+2019-06-06 02:03:49 [scrapy.utils.log] INFO: Versions: lxml 4.3.3.0, libxml2 2.9.9, cssselect 1.0.3, parsel 1.5.1, w3lib 1.20.0, Twisted 19.2.0, Python 3.7.2 (default, Jan 13 2019, 12:50:15) - [Clang 10.0.0 (clang-1000.11.45.5)], pyOpenSSL 19.0.0 (OpenSSL 1.1.1c  28 May 2019), cryptography 2.7, Platform Darwin-17.4.0-x86_64-i386-64bit
+2019-06-06 02:03:49 [scrapy.crawler] INFO: Overridden settings: {'BOT_NAME': 'news_crawler', 'LOG_FILE': 'Log/news_crawer_log_20190606020349.log', 'NEWSPIDER_MODULE': 'news_crawler.spiders', 'ROBOTSTXT_OBEY': True, 'SPIDER_MODULES': ['news_crawler.spiders']}
+2019-06-06 02:03:50 [scrapy.extensions.telnet] INFO: Telnet Password: b9a4213e9e1e059f
+2019-06-06 02:03:50 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats']
+2019-06-06 02:03:50 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2019-06-06 02:03:50 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2019-06-06 02:03:50 [scrapy.middleware] INFO: Enabled item pipelines:
+['news_crawler.pipelines.NewsCrawlerPipeline',
+ 'news_crawler.pipelines.NewsTextPipeline',
+ 'news_crawler.pipelines.DropIfEmptyPipeline',
+ 'news_crawler.pipelines.DuplicatesPipeline',
+ 'news_crawler.pipelines.MongoPipeline']
+2019-06-06 02:03:50 [scrapy.core.engine] INFO: Spider opened
+2019-06-06 02:03:50 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2019-06-06 02:03:50 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2019-06-06 02:03:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/robots.txt> (referer: None)
+2019-06-06 02:03:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news> (referer: None)
+2019-06-06 02:03:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health> (referer: https://www.bbc.com/news)
+2019-06-06 02:03:51 [root] INFO: Parsing URL: https://www.bbc.com/news/health
+2019-06-06 02:03:51 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.bbc.com:443
+2019-06-06 02:03:51 [urllib3.connectionpool] DEBUG: https://www.bbc.com:443 "GET /news/health HTTP/1.1" 200 314081
+2019-06-06 02:03:52 [py.warnings] WARNING: /Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/readability/htmls.py:117: FutureWarning: The behavior of this method will change in future versions. Use specific 'len(elem)' or 'elem is not None' test instead.
+  raw_html = str_(tostring(doc.body or doc))
+
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .nw-c-news-navigation>a#nw-c-core-navigation-link.gs-u-display-none@m.gs-o-button.gs-o-button-big.gs-o-button-primary.nw-c-nav__narrow-headerbutton.nw-c-nav__narrow-headerbutton--closed
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__selected.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul.gs-o-list-ui--top-no-border.nw-c-nav__wide-sections>li.gs-o-list-ui__item--flush.gel-long-primer.gs-u-display-block.nw-c-nav__wide-menuitem-container
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - #topos-component>.advert-sponsor
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .advert-sponsor>#bbccom_sponsor_section_1_2_3_4_5.bbccom_slot
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - li.nw-c-promo-meta>a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span.gs-o-bullet__icon.gel-icon.gs-c-comment-count__icon.nw-c-comment__icon
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span#dna-comment-count___CPS__48495313.gs-o-bullet__text.dna-comment-count___CPS__48495313.nw-o-link-split__text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - li.nw-c-promo-meta>a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span.gs-o-bullet__icon.gel-icon.gs-c-comment-count__icon.nw-c-comment__icon
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span#dna-comment-count___CPS__48495313.gs-o-bullet__text.dna-comment-count___CPS__48495313.nw-o-link-split__text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - li.nw-c-promo-meta>a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span.gs-o-bullet__icon.gel-icon.gs-c-comment-count__icon.nw-c-comment__icon
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span#dna-comment-count___CPS__48438139.gs-o-bullet__text.dna-comment-count___CPS__48438139.nw-o-link-split__text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - li.nw-c-promo-meta>a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span.gs-o-bullet__icon.gel-icon.gs-c-comment-count__icon.nw-c-comment__icon
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span#dna-comment-count___CPS__48495313.gs-o-bullet__text.dna-comment-count___CPS__48495313.nw-o-link-split__text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - li.nw-c-promo-meta>a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span.gs-o-bullet__icon.gel-icon.gs-c-comment-count__icon.nw-c-comment__icon
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.gs-o-bullet.gs-o-bullet-.gs-c-comment-count.nw-o-link-split__anchor.nw-c-comment>span#dna-comment-count___CPS__48438139.gs-o-bullet__text.dna-comment-count___CPS__48438139.nw-o-link-split__text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#post_5cf693a8c79b82067baa295d.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#post_5cf693a8c79b82067baa295d.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#post_5cf7ce4bc79b82067baa2b09.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#post_5cf7ce4bc79b82067baa2b09.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48525211.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>a.qa-heading-link.lx-stream-post__header-link
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.qa-heading-link.lx-stream-post__header-link>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48525211.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#map_48502586.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>a.qa-heading-link.lx-stream-post__header-link
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.qa-heading-link.lx-stream-post__header-link>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#map_48502586.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#map_48502585.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>a.qa-heading-link.lx-stream-post__header-link
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.qa-heading-link.lx-stream-post__header-link>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#map_48502585.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48515865.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>a.qa-heading-link.lx-stream-post__header-link
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.qa-heading-link.lx-stream-post__header-link>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48515865.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48520066.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>a.qa-heading-link.lx-stream-post__header-link
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.qa-heading-link.lx-stream-post__header-link>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48520066.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48357762.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>a.qa-heading-link.lx-stream-post__header-link
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.qa-heading-link.lx-stream-post__header-link>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48357762.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48514349.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>a.qa-heading-link.lx-stream-post__header-link
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.qa-heading-link.lx-stream-post__header-link>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48514349.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48512297.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>header.lx-stream-post__header.gs-o-media
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .gs-o-media__body>h3.lx-stream-post__header-title.gel-great-primer-bold
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - h3.lx-stream-post__header-title.gel-great-primer-bold>a.qa-heading-link.lx-stream-post__header-link
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.qa-heading-link.lx-stream-post__header-link>span.lx-stream-post__header-text
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - article#sty_48512297.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>footer.lx-stream-post__footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - a.nw-o-link-split__anchor.ws-c-social-slice__share-link>svg.ws-c-social-slice__icon.ws-c-social-slice__icon--twitter
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - #core-navigation.nw-c-nav__narrow.gs-u-display-block.gs-u-display-none@m>button.gs-u-pr+.gs-u-pt+.gs-u-pb+.gs-u-mv.nw-c-nav__narrow-footerbutton.nw-c-nav__item-closed
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - body#readabilityBody>#orb-footer.orb-footer
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - #orb-footer.orb-footer>#navp-orb-footer-promo
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - #orb-aside.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>h2.orb-footer-lead
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>.orb-footer-primary-links
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - #orb-contentinfo.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-terms
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-about
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-privacy
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-cookies
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-accessibility
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-parental
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-contact
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-newsletter
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removing unlikely candidate - small>span.orb-footer-links
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.960 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--primary.gs-u-mt@xs.gs-u-mt@s.gs-u-mt@m.gs-u-mt@xl.gel-1/3@m.gel-1/2@xl>div{01} link density 0.309 ->  6.188
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.980 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--primary.gs-u-mt@xs.gs-u-mt@s.gs-u-mt@m.gs-u-mt@xl.gel-1/3@m.gel-1/2@xl link density 0.314 ->  4.788
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.960 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--primary.gs-u-mt@xs.gs-u-mt@s.gs-u-mt@m.gs-u-mt@xl.gel-1/3@m.gel-1/3@xl.gel-1/3@xxl>div{02} link density 0.309 ->  6.188
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.980 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline@m>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--primary.gs-u-mt@xs.gs-u-mt@s.gs-u-mt@m.gs-u-mt@xl.gel-1/3@m.gel-1/3@xl.gel-1/3@xxl link density 0.314 ->  4.788
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.170 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s>div{03} link density 0.282 ->  5.864
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.585 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@xl.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s link density 0.287 ->  4.693
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.860 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s>div{04} link density 0.312 ->  5.408
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.430 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@xl.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s link density 0.312 ->  4.424
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  9.750 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s>div{05} link density 0.318 ->  6.648
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.375 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@xl.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s link density 0.323 ->  4.994
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.970 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s>div{06} link density 0.292 ->  5.643
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.485 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@xl.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s link density 0.297 ->  4.560
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  9.060 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s>div{07} link density 0.293 ->  6.402
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.030 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@xl.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s link density 0.298 ->  4.938
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.000 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s>div{08} link density 0.310 ->  5.517
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.500 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@xl.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt--@s.gs-u-mt--@m.gel-1/2@xs.gel-1/1@s link density 0.313 ->  4.466
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.960 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--primary.gs-u-mt@xs.gs-u-mt@s.gs-u-mt@m.gs-u-mt@xl.gel-1/3@m.gel-1/2@xl.gel-1/1@xxl>div{09} link density 0.309 ->  6.188
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.980 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline@m.gs-c-promo--stacked@xxl.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--primary.gs-u-mt@xs.gs-u-mt@s.gs-u-mt@m.gs-u-mt@xl.gel-1/3@m.gel-1/2@xl.gel-1/1@xxl link density 0.314 ->  4.788
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.170 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{10} link density 0.282 ->  5.864
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.585 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.287 ->  4.693
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.860 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{11} link density 0.312 ->  5.408
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.430 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.312 ->  4.424
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  9.750 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{12} link density 0.318 ->  6.648
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.375 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.323 ->  4.994
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.970 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{13} link density 0.292 ->  5.643
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.485 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.297 ->  4.560
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  9.060 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{14} link density 0.293 ->  6.402
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.030 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.298 ->  4.938
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.000 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{15} link density 0.310 ->  5.517
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.500 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.313 ->  4.466
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.170 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{16} link density 0.282 ->  5.864
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.585 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.287 ->  4.693
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.860 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{17} link density 0.312 ->  5.408
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.430 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.312 ->  4.424
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  9.750 .gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s>div{18} link density 0.318 ->  6.648
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  7.375 .gs-c-promo.gs-t-News.nw-c-promo.gs-o-faux-block-link.gs-u-pb.gs-u-pb+@m.nw-p-default.gs-c-promo--inline.gs-c-promo--stacked@m.gs-c-promo--flex>.gs-c-promo-body.gs-u-mt@xxs.gs-u-mt@m.gs-c-promo-body--flex.gs-u-mt@xs.gs-u-mt0@xs.gs-u-mt@m.gel-1/2@xs.gel-1/1@s link density 0.323 ->  4.994
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 45.640 .lx-rta>.lx-stream-post-body link density 0.000 -> 45.640
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 12.820 .lx-stream-post__body.gel-body-copy>.lx-rta link density 0.000 -> 12.820
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 36.820 blockquote.lx-stream-post-quote.lx-stream-post-quote--default>.lx-stream-post-quote__body link density 0.000 -> 36.820
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 31.410 .lx-stream-post-body>blockquote.lx-stream-post-quote.lx-stream-post-quote--default link density 0.000 -> 31.410
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 52.320 .lx-rta>.lx-stream-post-body link density 0.085 -> 47.867
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 16.160 .lx-stream-post__body.gel-body-copy>.lx-rta link density 0.085 -> 14.785
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 32.990 .gel-layout__item.gel-5/8@l>.lx-rta.lx-stream-post-body link density 0.083 -> 30.241
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.495 .gel-layout>.gel-layout__item.gel-5/8@l link density 0.083 ->  5.954
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 32.850 .gel-layout__item.gel-5/8@l>.lx-rta.lx-stream-post-body link density 0.096 -> 29.705
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.425 .gel-layout>.gel-layout__item.gel-5/8@l link density 0.096 ->  5.810
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 33.070 .gel-layout__item.gel-5/8@l>.lx-rta.lx-stream-post-body link density 0.078 -> 30.504
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.535 .gel-layout>.gel-layout__item.gel-5/8@l link density 0.078 ->  6.028
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 32.980 .gel-layout__item.gel-5/8@l>.lx-rta.lx-stream-post-body link density 0.084 -> 30.206
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.490 .gel-layout>.gel-layout__item.gel-5/8@l link density 0.068 ->  6.048
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 33.830 .gel-layout__item.gel-5/8@l>.lx-rta.lx-stream-post-body link density 0.098 -> 30.521
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.915 .gel-layout>.gel-layout__item.gel-5/8@l link density 0.098 ->  6.239
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 33.130 .gel-layout__item.gel-5/8@l>.lx-rta.lx-stream-post-body link density 0.074 -> 30.686
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  6.565 .gel-layout>.gel-layout__item.gel-5/8@l link density 0.074 ->  6.081
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch -0.670 ul.ws-c-get-in-touch__list>li.ws-c-get-in-touch__item.ws-c-get-in-touch__item--0 link density 0.636 -> -0.244
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  1.635 .ws-c-get-in-touch.ws-c-social-secondary-component.gel-layout__item.gel-brevier.gs-u-pb++@m>ul.ws-c-get-in-touch__list link density 0.677 ->  0.528
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch -0.630 ul.ws-c-get-in-touch__list>li.ws-c-get-in-touch__item.ws-c-get-in-touch__item--1 link density 0.405 -> -0.375
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch -0.690 ul.ws-c-get-in-touch__list>li.ws-c-get-in-touch__item.ws-c-get-in-touch__item--2 link density 0.774 -> -0.156
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch -0.740 ul.ws-c-get-in-touch__list>li.ws-c-get-in-touch__item.ws-c-get-in-touch__item--3 link density 1.000 -> -0.000
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch  8.390 body#readabilityBody>#orb-modules link density 0.394 ->  5.082
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 26.695 html>body#readabilityBody link density 0.393 -> 16.201
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 33.140 .lx-stream-post__body.gel-body-copy>.lx-rta.lx-stream-post-body.gel-body-copy link density 0.000 -> 33.140
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 31.570 article#map_48502586.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>.lx-stream-post__body.gel-body-copy link density 0.000 -> 31.570
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 32.970 .lx-stream-post__body.gel-body-copy>.lx-rta.lx-stream-post-body.gel-body-copy link density 0.000 -> 32.970
+2019-06-06 02:03:52 [readability.readability] DEBUG: Branch 31.485 article#map_48502585.lx-stream-post.gs-u-align-left.lx-stream-post--has-meta>.lx-stream-post__body.gel-body-copy link density 0.000 -> 31.485
+2019-06-06 02:03:52 [readability.readability] INFO: Top 5 : 47.867 .lx-rta>.lx-stream-post-body
+2019-06-06 02:03:52 [readability.readability] INFO: Top 5 : 45.640 .lx-rta>.lx-stream-post-body
+2019-06-06 02:03:52 [readability.readability] INFO: Top 5 : 36.820 blockquote.lx-stream-post-quote.lx-stream-post-quote--default>.lx-stream-post-quote__body
+2019-06-06 02:03:52 [readability.readability] INFO: Top 5 : 33.140 .lx-stream-post__body.gel-body-copy>.lx-rta.lx-stream-post-body.gel-body-copy
+2019-06-06 02:03:52 [readability.readability] INFO: Top 5 : 32.970 .lx-stream-post__body.gel-body-copy>.lx-rta.lx-stream-post-body.gel-body-copy
+2019-06-06 02:03:52 [readability.readability] DEBUG: Removed 47.867 .lx-stream-post-body>.lx-stream-post-body.lx-stream-post-body__embed.gs-u-clearfix.gel-ml0 with weight 25 cause it has too short content length 20 without a single image.
+2019-06-06 02:03:52 [readability.readability] DEBUG: Not removing div{01}>.lx-stream-post-body of length 732: Allegations of abuse at Whorlton Hall ho...
+2019-06-06 02:03:52 [readability.readability] DEBUG: Not removing body>div{01} of length 732: Allegations of abuse at Whorlton Hall ho...
+2019-06-06 02:03:52 [root] INFO: Going to insert Item{'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b'Health - BBC News',
+ 'newsText': 'Allegations of abuse at Whorlton Hall hospital in County Durham '
+             'will be in the spotlight next week when representatives of the '
+             'health watchdog give evidence to the UK Parliament Human Rights '
+             'Committee.  The Care Quality Commission’s chief executive, Ian '
+             'Trenholm, and Dr Paul Lelliott, deputy chief inspector (mental '
+             'health) will appear on Wednesday.  It follows revelations '
+             'broadcast last month by BBC Panorama, which alleged vulnerable '
+             'patients were mistreated. Ten people have been arrested.  The '
+             "session forms part of the committee\\'s inquiry into conditions "
+             'in learning disability inpatient units.  In a tweet, committee '
+             'chair Harriet Harman MP said the commission had provided "false '
+             'reassurance" which had served to "shield abusers".',
+ 'newsUrl': 'https://www.bbc.com/news/health'}
+2019-06-06 02:04:22 [scrapy.core.scraper] ERROR: Error processing {'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b'Health - BBC News',
+ 'newsText': 'Allegations of abuse at Whorlton Hall hospital in County Durham '
+             'will be in the spotlight next week when representatives of the '
+             'health watchdog give evidence to the UK Parliament Human Rights '
+             'Committee.  The Care Quality Commission’s chief executive, Ian '
+             'Trenholm, and Dr Paul Lelliott, deputy chief inspector (mental '
+             'health) will appear on Wednesday.  It follows revelations '
+             'broadcast last month by BBC Panorama, which alleged vulnerable '
+             'patients were mistreated. Ten people have been arrested.  The '
+             "session forms part of the committee\\'s inquiry into conditions "
+             'in learning disability inpatient units.  In a tweet, committee '
+             'chair Harriet Harman MP said the commission had provided "false '
+             'reassurance" which had served to "shield abusers".',
+ 'newsUrl': 'https://www.bbc.com/news/health'}
+Traceback (most recent call last):
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/agraj/KANIKA/generic_news_crawler/news_crawler/news_crawler/pipelines.py", line 120, in process_item
+    self.db[self.collection_name].insert_one(dict(item))
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 700, in insert_one
+    session=session),
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 614, in _insert
+    bypass_doc_val, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 602, in _insert_one
+    acknowledged, _insert_command, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1279, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/local/Cellar/python/3.7.2_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1611, in _tmp_session
+    s = self._ensure_session(session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1598, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in __start_session
+    server_session = self._get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1584, in _get_server_session
+    return self._topology.get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 429, in get_server_session
+    None)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 200, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2019-06-06 02:04:22 [scrapy.dupefilters] DEBUG: Filtered duplicate request: <GET https://www.bbc.com/news/health#skip-to-content> - no more duplicates will be shown (see DUPEFILTER_DEBUG to show all duplicates)
+2019-06-06 02:04:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48464510> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48438139> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48496652> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48495313> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:23 [root] INFO: Parsing URL: https://www.bbc.com/news/health-48464510
+2019-06-06 02:04:23 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.bbc.com:443
+2019-06-06 02:04:23 [urllib3.connectionpool] DEBUG: https://www.bbc.com:443 "GET /news/health-48464510 HTTP/1.1" 200 38208
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .story-body>.with-extracted-share-icons
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--messengerdesktop.twite__channel-click-extracted--messengerdesktop.twite__list-elements
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--messengerdesktop.twite__channel-click-extracted--messengerdesktop.twite__list-elements>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--email.twite__channel-click-extracted--email.twite__list-elements
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--email.twite__channel-click-extracted--email.twite__list-elements>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--whatsapp.twite__channel-click-extracted--whatsapp.twite__list-elements
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--whatsapp.twite__channel-click-extracted--whatsapp.twite__list-elements>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--messengermobile.twite__channel-click-extracted--messengermobile.twite__list-elements
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--messengermobile.twite__channel-click-extracted--messengermobile.twite__list-elements>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.twite__channels>li.twite__channel.twite__channel--twitter.twite__channel-click--twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - a.twite__channel-link>span.twite__icon.twite__icon--twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul.share__tools.share__tools--lightweight>li.share__tool.share__tool--twitter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .group.story-alsos.more-on-this-story>.group__header
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - #page.configurable.story>.page__foot
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - #site-container>#core-navigation.navigation--footer
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - #core-navigation.navigation--footer>h2.navigation--footer__heading
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .direction>#orb-footer.orb-footer
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - #orb-footer.orb-footer>#navp-orb-footer-promo
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - #orb-aside.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>h2.orb-footer-lead
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>.orb-footer-primary-links
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - #orb-contentinfo.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-terms
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-about
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-privacy
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-cookies
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-accessibility
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-parental
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-contact
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-newsletter
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removing unlikely candidate - small>span.orb-footer-links
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch 90.005 .column--primary>.story-body link density 0.054 -> 85.162
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch  6.840 .container--primary-and-secondary-columns.column-clearfix>.column--primary link density 0.079 ->  6.297
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch 142.650 .story-body>.story-body__inner link density 0.056 -> 134.705
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch  2.870 #comp-top-stories-promo.top-stories-promo>a.top-stories-promo-story link density 0.000 ->  2.870
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch -43.565 .column--secondary>#comp-top-stories-promo.top-stories-promo link density 0.911 -> -3.897
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch 32.400 .heron__item.faux-block-link>.heron__item-body link density 0.378 -> 20.141
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch  6.200 .heron>.heron__item.faux-block-link link density 0.397 ->  3.739
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch 32.420 .heron__item.faux-block-link>.heron__item-body link density 0.368 -> 20.476
+2019-06-06 02:04:23 [readability.readability] DEBUG: Branch  6.210 .heron>.heron__item.faux-block-link link density 0.391 ->  3.782
+2019-06-06 02:04:23 [readability.readability] INFO: Top 5 : 134.705 .story-body>.story-body__inner
+2019-06-06 02:04:23 [readability.readability] INFO: Top 5 : 85.162 .column--primary>.story-body
+2019-06-06 02:04:23 [readability.readability] INFO: Top 5 : 20.476 .heron__item.faux-block-link>.heron__item-body
+2019-06-06 02:04:23 [readability.readability] INFO: Top 5 : 20.141 .heron__item.faux-block-link>.heron__item-body
+2019-06-06 02:04:23 [readability.readability] INFO: Top 5 :  6.297 .container--primary-and-secondary-columns.column-clearfix>.column--primary
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removed 134.705 .story-body__inner>ul.story-body__unordered-list with weight 25 cause it has too many links 0.953 for its weight 25.
+2019-06-06 02:04:23 [readability.readability] DEBUG: Removed 134.705 .story-body__inner>#bbccom_mpu_1_2_3.bbccom_slot.mpu-ad with weight 0 cause it has too short content length 11 without a single image.
+2019-06-06 02:04:23 [root] INFO: Going to insert Item{'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b'GM fungus rapidly kills 99% of malaria mosquitoes, study sug'
+                 b'gests - BBC News',
+ 'newsText': '\\n  \\n \\n \\n '
+             '![Mosquito](https://ichef.bbci.co.uk/news/320/cpsprodpb/136E2/production/_107168597_c0093034-feeding_mosquito- '
+             'spl.jpg)\\n \\n \\n \\n Image copyright\\n Science Photo '
+             'Library\\n \\n \\n \\n  A fungus - genetically enhanced to '
+             'produce spider toxin - can rapidly kill huge numbers of the '
+             'mosquitoes that spread malaria, a study suggests.  Trials, which '
+             'took place in Burkina Faso, showed mosquito populations '
+             'collapsed by 99% within 45 days.  The researchers say their aim '
+             'is not to make the insects extinct but to help stop the spread '
+             'of malaria.  The disease, which is spread when female mosquitoes '
+             'drink blood, kills more than 400,000 people per year.  '
+             'Worldwide, there are about 219 million cases of malaria each '
+             'year.  Conducting the study, researchers at the University of '
+             'Maryland in the US - and the IRSS research institute in Burkina '
+             'Faso - first identified a fungus called Metarhizium pingshaense '
+             '_,_ which naturally infects the Anopheles mosquitoes that spread '
+             'malaria.  The next stage was to enhance the fungus. "They\\\'re '
+             'very malleable, you can genetically engineer them very easily," '
+             'Prof Raymond St Leger, from the University of Maryland, told BBC '
+             'News.  \\n \\n \\n \\n  \\n \\n \\n Image copyright\\n Getty '
+             'Images\\n \\n \\n \\n \\n Image caption\\n \\n Instructions for '
+             "making the funnel-web spider toxin were added to the fungus\\'s "
+             'genetic code\\n \\n \\n \\n  They turned to a toxin found in the '
+             'venom of a species of funnel-web spider in Australia.  The '
+             'genetic instructions for making the toxin were added to the '
+             "fungus\\'s own genetic code so it would start making the toxin "
+             'once it was inside a mosquito.  "A spider uses its fangs to '
+             'pierce the skin of insects and inject toxins, we replaced the '
+             'fangs of spider with Metarhizium _,"_ Prof St Leger explained.  '
+             'Laboratory tests showed the genetically modified fungus could '
+             'kill quicker, and that it took fewer fungal spores to do the '
+             'job. The next step was to test the fungus in as close to '
+             'real-world conditions as possible.  A 6,500-sq-ft fake village - '
+             'complete with plants, huts, water sources and food for the '
+             'mosquitoes - was set up in Burkina Faso. It was surrounded by a '
+             'double layer of mosquito netting to prevent anything escaping.  '
+             '\\n \\n \\n \\n  \\n \\n \\n Image copyright\\n Etienne Bilgo\\n '
+             '\\n \\n \\n \\n Image caption\\n \\n A so-called '
+             '"mosquitosphere" tests the fungus in real-world conditions, '
+             'without releasing it into the wild\\n \\n \\n \\n  The fungal '
+             'spores were mixed with sesame oil and wiped on to black cotton '
+             'sheets. The mosquitoes had to land on the sheets to be exposed '
+             'to the deadly fungus. The researchers started the experiments '
+             'with 1,500 mosquitoes.  The results, published in the journal '
+             'Science, showed numbers soared when the insects were left alone. '
+             'But when the spider-toxin fungus was used, there were just 13 '
+             'mosquitoes left after 45 days.  \\n \\n \\n \\n  \\n \\n \\n '
+             'Image copyright\\n Oliver Zida\\n \\n \\n \\n \\n Image '
+             'caption\\n \\n A mosquito breeding pool inside the test area\\n '
+             '\\n \\n \\n  "The transgenic fungus quickly collapsed the '
+             'mosquito population in just two generations," said Dr Brian '
+             'Lovett, from the University of Maryland.  Tests also showed the '
+             'fungus was specific to these mosquitoes and did not affect other '
+             'insects such as bees.  He added: "Our technology is not aiming '
+             "to drive the extinction of mosquitoes, what we\\'re aiming to do "
+             'is break malaria transmission in an area."  New tools are needed '
+             'to tackle malaria as mosquitoes are becoming resistant to '
+             'insecticides. The World Health Organization has warned that '
+             'cases are now increasing in the 10 worst affected countries in '
+             'Africa.  \\n \\n \\n \\n  \\n \\n \\n Image copyright\\n Brian '
+             'Lovett\\n \\n \\n \\n \\n Image caption\\n \\n A mosquito '
+             'infected with fungus marked in green\\n \\n \\n \\n  Commenting '
+             'on the findings, Prof Michael Bonsall, from the University of '
+             'Oxford, said: "Neat - this is a super-exciting study.  "The '
+             'prospects for controlling mosquitoes using this modified fungus '
+             'are high.  "Proportionate bio-safety regulations are needed to '
+             'ensure that the viability of this and other approaches for '
+             'vector [mosquito] control using genetic methods are not lost '
+             'through overly zealous restrictions."  Dr Tony Nolan, from the '
+             'Liverpool School of Tropical Medicine, added: "These results are '
+             'encouraging.  "We need new and complementary tools to augment '
+             'existing control methods, which are being affected by the '
+             'development of insecticide-resistance."   _Follow James_on '
+             'Twitter.  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/health-48464510'}
+2019-06-06 02:04:53 [scrapy.core.scraper] ERROR: Error processing {'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b'GM fungus rapidly kills 99% of malaria mosquitoes, study sug'
+                 b'gests - BBC News',
+ 'newsText': '\\n  \\n \\n \\n '
+             '![Mosquito](https://ichef.bbci.co.uk/news/320/cpsprodpb/136E2/production/_107168597_c0093034-feeding_mosquito- '
+             'spl.jpg)\\n \\n \\n \\n Image copyright\\n Science Photo '
+             'Library\\n \\n \\n \\n  A fungus - genetically enhanced to '
+             'produce spider toxin - can rapidly kill huge numbers of the '
+             'mosquitoes that spread malaria, a study suggests.  Trials, which '
+             'took place in Burkina Faso, showed mosquito populations '
+             'collapsed by 99% within 45 days.  The researchers say their aim '
+             'is not to make the insects extinct but to help stop the spread '
+             'of malaria.  The disease, which is spread when female mosquitoes '
+             'drink blood, kills more than 400,000 people per year.  '
+             'Worldwide, there are about 219 million cases of malaria each '
+             'year.  Conducting the study, researchers at the University of '
+             'Maryland in the US - and the IRSS research institute in Burkina '
+             'Faso - first identified a fungus called Metarhizium pingshaense '
+             '_,_ which naturally infects the Anopheles mosquitoes that spread '
+             'malaria.  The next stage was to enhance the fungus. "They\\\'re '
+             'very malleable, you can genetically engineer them very easily," '
+             'Prof Raymond St Leger, from the University of Maryland, told BBC '
+             'News.  \\n \\n \\n \\n  \\n \\n \\n Image copyright\\n Getty '
+             'Images\\n \\n \\n \\n \\n Image caption\\n \\n Instructions for '
+             "making the funnel-web spider toxin were added to the fungus\\'s "
+             'genetic code\\n \\n \\n \\n  They turned to a toxin found in the '
+             'venom of a species of funnel-web spider in Australia.  The '
+             'genetic instructions for making the toxin were added to the '
+             "fungus\\'s own genetic code so it would start making the toxin "
+             'once it was inside a mosquito.  "A spider uses its fangs to '
+             'pierce the skin of insects and inject toxins, we replaced the '
+             'fangs of spider with Metarhizium _,"_ Prof St Leger explained.  '
+             'Laboratory tests showed the genetically modified fungus could '
+             'kill quicker, and that it took fewer fungal spores to do the '
+             'job. The next step was to test the fungus in as close to '
+             'real-world conditions as possible.  A 6,500-sq-ft fake village - '
+             'complete with plants, huts, water sources and food for the '
+             'mosquitoes - was set up in Burkina Faso. It was surrounded by a '
+             'double layer of mosquito netting to prevent anything escaping.  '
+             '\\n \\n \\n \\n  \\n \\n \\n Image copyright\\n Etienne Bilgo\\n '
+             '\\n \\n \\n \\n Image caption\\n \\n A so-called '
+             '"mosquitosphere" tests the fungus in real-world conditions, '
+             'without releasing it into the wild\\n \\n \\n \\n  The fungal '
+             'spores were mixed with sesame oil and wiped on to black cotton '
+             'sheets. The mosquitoes had to land on the sheets to be exposed '
+             'to the deadly fungus. The researchers started the experiments '
+             'with 1,500 mosquitoes.  The results, published in the journal '
+             'Science, showed numbers soared when the insects were left alone. '
+             'But when the spider-toxin fungus was used, there were just 13 '
+             'mosquitoes left after 45 days.  \\n \\n \\n \\n  \\n \\n \\n '
+             'Image copyright\\n Oliver Zida\\n \\n \\n \\n \\n Image '
+             'caption\\n \\n A mosquito breeding pool inside the test area\\n '
+             '\\n \\n \\n  "The transgenic fungus quickly collapsed the '
+             'mosquito population in just two generations," said Dr Brian '
+             'Lovett, from the University of Maryland.  Tests also showed the '
+             'fungus was specific to these mosquitoes and did not affect other '
+             'insects such as bees.  He added: "Our technology is not aiming '
+             "to drive the extinction of mosquitoes, what we\\'re aiming to do "
+             'is break malaria transmission in an area."  New tools are needed '
+             'to tackle malaria as mosquitoes are becoming resistant to '
+             'insecticides. The World Health Organization has warned that '
+             'cases are now increasing in the 10 worst affected countries in '
+             'Africa.  \\n \\n \\n \\n  \\n \\n \\n Image copyright\\n Brian '
+             'Lovett\\n \\n \\n \\n \\n Image caption\\n \\n A mosquito '
+             'infected with fungus marked in green\\n \\n \\n \\n  Commenting '
+             'on the findings, Prof Michael Bonsall, from the University of '
+             'Oxford, said: "Neat - this is a super-exciting study.  "The '
+             'prospects for controlling mosquitoes using this modified fungus '
+             'are high.  "Proportionate bio-safety regulations are needed to '
+             'ensure that the viability of this and other approaches for '
+             'vector [mosquito] control using genetic methods are not lost '
+             'through overly zealous restrictions."  Dr Tony Nolan, from the '
+             'Liverpool School of Tropical Medicine, added: "These results are '
+             'encouraging.  "We need new and complementary tools to augment '
+             'existing control methods, which are being affected by the '
+             'development of insecticide-resistance."   _Follow James_on '
+             'Twitter.  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/health-48464510'}
+Traceback (most recent call last):
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/agraj/KANIKA/generic_news_crawler/news_crawler/news_crawler/pipelines.py", line 120, in process_item
+    self.db[self.collection_name].insert_one(dict(item))
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 700, in insert_one
+    session=session),
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 614, in _insert
+    bypass_doc_val, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 602, in _insert_one
+    acknowledged, _insert_command, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1279, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/local/Cellar/python/3.7.2_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1611, in _tmp_session
+    s = self._ensure_session(session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1598, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in __start_session
+    server_session = self._get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1584, in _get_server_session
+    return self._topology.get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 429, in get_server_session
+    None)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 200, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2019-06-06 02:04:53 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.bbc.com/news/health-48438139> from <GET https://www.bbc.com/news/health-48438139/#comp-comments-button>
+2019-06-06 02:04:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48514349?intlink_from_url=&link_location=live-reporting-story> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48478529> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48357762?intlink_from_url=&link_location=live-reporting-story> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48472388> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.bbc.com/news/health-48509969> (referer: https://www.bbc.com/news/health)
+2019-06-06 02:04:53 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://www.bbc.com/news/health-48495313> from <GET https://www.bbc.com/news/health-48495313/#comp-comments-button>
+2019-06-06 02:04:53 [scrapy.extensions.logstats] INFO: Crawled 12 pages (at 12 pages/min), scraped 0 items (at 0 items/min)
+2019-06-06 02:04:53 [root] INFO: Parsing URL: https://www.bbc.com/news/health-48438139
+2019-06-06 02:04:53 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.bbc.com:443
+2019-06-06 02:04:53 [urllib3.connectionpool] DEBUG: https://www.bbc.com:443 "GET /news/health-48438139 HTTP/1.1" 200 37817
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .story-body>.with-extracted-share-icons
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.mini-info-list__item>span#dna-comment-count___CPS__48438139.js-comment-count.comment-count
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--messengerdesktop.twite__channel-click-extracted--messengerdesktop.twite__list-elements
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--messengerdesktop.twite__channel-click-extracted--messengerdesktop.twite__list-elements>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--email.twite__channel-click-extracted--email.twite__list-elements
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--email.twite__channel-click-extracted--email.twite__list-elements>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--whatsapp.twite__channel-click-extracted--whatsapp.twite__list-elements
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--whatsapp.twite__channel-click-extracted--whatsapp.twite__list-elements>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--messengermobile.twite__channel-click-extracted--messengermobile.twite__list-elements
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--messengermobile.twite__channel-click-extracted--messengermobile.twite__list-elements>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.twite__channels>li.twite__channel.twite__channel--twitter.twite__channel-click--twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.twite__channel-link>span.twite__icon.twite__icon--twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - #comp-comments-button.js-iframe-container.comments-button.ghost-column>a.comments-button__link.js-comments-button__link
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.comments-button__link.js-comments-button__link>span.comments-button__icon
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - a.comments-button__link.js-comments-button__link>span.js-comment-count.comments-button__count
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul.share__tools.share__tools--lightweight>li.share__tool.share__tool--twitter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .group.story-alsos.more-on-this-story>.group__header
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - #page.configurable.story>.page__foot
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - #site-container>#core-navigation.navigation--footer
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - #core-navigation.navigation--footer>h2.navigation--footer__heading
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .direction>#orb-footer.orb-footer
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - #orb-footer.orb-footer>#navp-orb-footer-promo
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - #orb-aside.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>h2.orb-footer-lead
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>.orb-footer-primary-links
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - #orb-contentinfo.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-terms
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-about
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-privacy
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-cookies
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-accessibility
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-parental
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-contact
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-newsletter
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removing unlikely candidate - small>span.orb-footer-links
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch 75.735 .column--primary>.story-body link density 0.039 -> 72.759
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch  6.215 .container--primary-and-secondary-columns.column-clearfix>.column--primary link density 0.069 ->  5.788
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch 116.610 .story-body>.story-body__inner link density 0.041 -> 111.871
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch  2.870 #comp-top-stories-promo.top-stories-promo>a.top-stories-promo-story link density 0.000 ->  2.870
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch -43.565 .column--secondary>#comp-top-stories-promo.top-stories-promo link density 0.911 -> -3.897
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch 32.400 .heron__item.faux-block-link>.heron__item-body link density 0.378 -> 20.141
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch  6.200 .heron>.heron__item.faux-block-link link density 0.397 ->  3.739
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch 32.420 .heron__item.faux-block-link>.heron__item-body link density 0.368 -> 20.476
+2019-06-06 02:04:53 [readability.readability] DEBUG: Branch  6.210 .heron>.heron__item.faux-block-link link density 0.391 ->  3.782
+2019-06-06 02:04:53 [readability.readability] INFO: Top 5 : 111.871 .story-body>.story-body__inner
+2019-06-06 02:04:53 [readability.readability] INFO: Top 5 : 72.759 .column--primary>.story-body
+2019-06-06 02:04:53 [readability.readability] INFO: Top 5 : 20.476 .heron__item.faux-block-link>.heron__item-body
+2019-06-06 02:04:53 [readability.readability] INFO: Top 5 : 20.141 .heron__item.faux-block-link>.heron__item-body
+2019-06-06 02:04:53 [readability.readability] INFO: Top 5 :  5.788 .container--primary-and-secondary-columns.column-clearfix>.column--primary
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removed 111.871 .story-body__inner>ul.story-body__unordered-list with weight 25 cause it has too many links 0.937 for its weight 25.
+2019-06-06 02:04:53 [readability.readability] DEBUG: Not removing .story-body__inner>ul.story-body__unordered-list of length 288: \ninternational recruitment by appointin...
+2019-06-06 02:04:53 [readability.readability] DEBUG: Removed 111.871 .story-body__inner>#bbccom_mpu_1_2_3.bbccom_slot.mpu-ad with weight 0 cause it has too short content length 11 without a single image.
+2019-06-06 02:04:53 [root] INFO: Going to insert Item{'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b'NHS turns to Mumsnet to fill nurse vacancies - BBC News',
+ 'newsText': '\\n  \\n \\n \\n ![3 nhs nurses walking down '
+             'corridor](https://ichef.bbci.co.uk/news/320/cpsprodpb/EC3E/production/_105087406_gettyimages-912338644.jpg)\\n '
+             '\\n \\n \\n Image copyright\\n Getty Images\\n \\n \\n \\n  The '
+             'NHS in England will turn to Mumsnet to help recruit nurses as '
+             'part of a package of measures to fill vacancies in the health '
+             'service.  NHS bosses see the online parenting chatroom and '
+             'website as a crucial partner to entice nurses who have left the '
+             'profession, to rejoin it.  It is one of a number of steps '
+             'unveiled in the interim People Plan.  The report sets the '
+             'ambition of recruiting an extra 40,000 nurses over the next five '
+             'years.  It aims to do this through a combination of:  \\n    * '
+             'international recruitment by appointing lead agencies to '
+             'co-ordinate the process \\n    * ensuring more nurses enter '
+             'training \\n    * improving retention rates by placing a greater '
+             'emphasis on career developing \\n    * encouraging nurses back '
+             'into the NHS with the promise of flexible working opportunities '
+             '\\n  The plan for the link-up with Mumsnet has yet to be '
+             'finalised, but is understood to involve promoting the '
+             'opportunities that exist to go back to nursing.  A national '
+             'return-to-practice scheme was set up in 2014 and is now being '
+             'expanded. It offers catch-up training and a route back for '
+             'nurses and support staff who have let their professional '
+             "registrations lapse.  ## We want a \\'modern, caring and "
+             "exciting workplace\\'  While the plan focuses heavily on nurses, "
+             'it also acknowledges more doctors and support staff will also be '
+             'needed.  It comes amid mounting concern about the number of '
+             'vacancies in the health service.  The 40,000 nurses target would '
+             'only be enough to fill the current number of unfilled nurse '
+             'posts.  The plan sets a target of reducing the overall vacancy '
+             'rate for all staff to 5% by 2028 - it is currently over 8%.  \\n '
+             '\\n \\n \\n  \\n \\n \\n Image copyright\\n PA\\n \\n \\n \\n  '
+             'Dido Harding, chair of NHS Improvement, which is leading the '
+             'work on the People Plan, said it was clear there were '
+             '"challenges" with staff.  "I want front-line NHS staff to know '
+             'we have heard their concerns about the pressures they face and '
+             'we are determined to address them.  "The NHS needs more staff. '
+             'But that, on its own, is not enough.  "We need to change the way '
+             'people work in the NHS and create a modern, caring and exciting '
+             'workplace."  Health Secretary Matt Hancock added: "We must make '
+             'the NHS an employer to be proud of."  ## \\\'Ducking the big '
+             "challenges\\'  But shadow health secretary Jonathan Ashworth "
+             'said that the plan was "ducking the big challenges".  He said '
+             'the bursary for nursing students should be restored and '
+             'legislation was needed to ensure safe staffing levels on wards.  '
+             'Anita Charlesworth, of the Health Foundation think tank, said '
+             'staffing was the "make or break issue for the NHS".  But she '
+             'said health leaders were operating with "one hand tied behind '
+             'their back", as it was not yet clear how the plan would be '
+             'funded.  Patricia Marquis, of the Royal College of Nursing, '
+             'added: "This document begins to tackle the real issues but many '
+             'will reserve final judgement until funding levels and practical '
+             'details are revealed."  A full People Plan is to be published by '
+             'the end of the year, once the government has announced its '
+             'spending plans.  Read more from Nick  Follow Nick on Twitter  '
+             '\\n',
+ 'newsUrl': 'https://www.bbc.com/news/health-48438139'}
+2019-06-06 02:05:24 [scrapy.core.scraper] ERROR: Error processing {'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b'NHS turns to Mumsnet to fill nurse vacancies - BBC News',
+ 'newsText': '\\n  \\n \\n \\n ![3 nhs nurses walking down '
+             'corridor](https://ichef.bbci.co.uk/news/320/cpsprodpb/EC3E/production/_105087406_gettyimages-912338644.jpg)\\n '
+             '\\n \\n \\n Image copyright\\n Getty Images\\n \\n \\n \\n  The '
+             'NHS in England will turn to Mumsnet to help recruit nurses as '
+             'part of a package of measures to fill vacancies in the health '
+             'service.  NHS bosses see the online parenting chatroom and '
+             'website as a crucial partner to entice nurses who have left the '
+             'profession, to rejoin it.  It is one of a number of steps '
+             'unveiled in the interim People Plan.  The report sets the '
+             'ambition of recruiting an extra 40,000 nurses over the next five '
+             'years.  It aims to do this through a combination of:  \\n    * '
+             'international recruitment by appointing lead agencies to '
+             'co-ordinate the process \\n    * ensuring more nurses enter '
+             'training \\n    * improving retention rates by placing a greater '
+             'emphasis on career developing \\n    * encouraging nurses back '
+             'into the NHS with the promise of flexible working opportunities '
+             '\\n  The plan for the link-up with Mumsnet has yet to be '
+             'finalised, but is understood to involve promoting the '
+             'opportunities that exist to go back to nursing.  A national '
+             'return-to-practice scheme was set up in 2014 and is now being '
+             'expanded. It offers catch-up training and a route back for '
+             'nurses and support staff who have let their professional '
+             "registrations lapse.  ## We want a \\'modern, caring and "
+             "exciting workplace\\'  While the plan focuses heavily on nurses, "
+             'it also acknowledges more doctors and support staff will also be '
+             'needed.  It comes amid mounting concern about the number of '
+             'vacancies in the health service.  The 40,000 nurses target would '
+             'only be enough to fill the current number of unfilled nurse '
+             'posts.  The plan sets a target of reducing the overall vacancy '
+             'rate for all staff to 5% by 2028 - it is currently over 8%.  \\n '
+             '\\n \\n \\n  \\n \\n \\n Image copyright\\n PA\\n \\n \\n \\n  '
+             'Dido Harding, chair of NHS Improvement, which is leading the '
+             'work on the People Plan, said it was clear there were '
+             '"challenges" with staff.  "I want front-line NHS staff to know '
+             'we have heard their concerns about the pressures they face and '
+             'we are determined to address them.  "The NHS needs more staff. '
+             'But that, on its own, is not enough.  "We need to change the way '
+             'people work in the NHS and create a modern, caring and exciting '
+             'workplace."  Health Secretary Matt Hancock added: "We must make '
+             'the NHS an employer to be proud of."  ## \\\'Ducking the big '
+             "challenges\\'  But shadow health secretary Jonathan Ashworth "
+             'said that the plan was "ducking the big challenges".  He said '
+             'the bursary for nursing students should be restored and '
+             'legislation was needed to ensure safe staffing levels on wards.  '
+             'Anita Charlesworth, of the Health Foundation think tank, said '
+             'staffing was the "make or break issue for the NHS".  But she '
+             'said health leaders were operating with "one hand tied behind '
+             'their back", as it was not yet clear how the plan would be '
+             'funded.  Patricia Marquis, of the Royal College of Nursing, '
+             'added: "This document begins to tackle the real issues but many '
+             'will reserve final judgement until funding levels and practical '
+             'details are revealed."  A full People Plan is to be published by '
+             'the end of the year, once the government has announced its '
+             'spending plans.  Read more from Nick  Follow Nick on Twitter  '
+             '\\n',
+ 'newsUrl': 'https://www.bbc.com/news/health-48438139'}
+Traceback (most recent call last):
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/agraj/KANIKA/generic_news_crawler/news_crawler/news_crawler/pipelines.py", line 120, in process_item
+    self.db[self.collection_name].insert_one(dict(item))
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 700, in insert_one
+    session=session),
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 614, in _insert
+    bypass_doc_val, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 602, in _insert_one
+    acknowledged, _insert_command, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1279, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/local/Cellar/python/3.7.2_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1611, in _tmp_session
+    s = self._ensure_session(session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1598, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in __start_session
+    server_session = self._get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1584, in _get_server_session
+    return self._topology.get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 429, in get_server_session
+    None)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 200, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2019-06-06 02:05:24 [root] INFO: Parsing URL: https://www.bbc.com/news/health-48496652
+2019-06-06 02:05:24 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.bbc.com:443
+2019-06-06 02:05:24 [urllib3.connectionpool] DEBUG: https://www.bbc.com:443 "GET /news/health-48496652 HTTP/1.1" 200 37269
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - .story-body>.with-extracted-share-icons
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--messengerdesktop.twite__channel-click-extracted--messengerdesktop.twite__list-elements
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--messengerdesktop.twite__channel-click-extracted--messengerdesktop.twite__list-elements>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--email.twite__channel-click-extracted--email.twite__list-elements
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--email.twite__channel-click-extracted--email.twite__list-elements>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--whatsapp.twite__channel-click-extracted--whatsapp.twite__list-elements
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--whatsapp.twite__channel-click-extracted--whatsapp.twite__list-elements>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--messengermobile.twite__channel-click-extracted--messengermobile.twite__list-elements
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--messengermobile.twite__channel-click-extracted--messengermobile.twite__list-elements>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.twite__channels>li.twite__channel.twite__channel--twitter.twite__channel-click--twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - a.twite__channel-link>span.twite__icon.twite__icon--twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul.share__tools.share__tools--lightweight>li.share__tool.share__tool--twitter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - #page.configurable.story>.page__foot
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - #site-container>#core-navigation.navigation--footer
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - #core-navigation.navigation--footer>h2.navigation--footer__heading
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - .direction>#orb-footer.orb-footer
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - #orb-footer.orb-footer>#navp-orb-footer-promo
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - #orb-aside.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>h2.orb-footer-lead
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>.orb-footer-primary-links
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - #orb-contentinfo.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-terms
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-about
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-privacy
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-cookies
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-accessibility
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-parental
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-contact
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-newsletter
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removing unlikely candidate - small>span.orb-footer-links
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch 88.270 .column--primary>.story-body link density 0.040 -> 84.735
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch  6.840 .container--primary-and-secondary-columns.column-clearfix>.column--primary link density 0.071 ->  6.354
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch 139.180 .story-body>.story-body__inner link density 0.042 -> 133.371
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch  2.870 #comp-top-stories-promo.top-stories-promo>a.top-stories-promo-story link density 0.000 ->  2.870
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch -43.565 .column--secondary>#comp-top-stories-promo.top-stories-promo link density 0.911 -> -3.897
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch 32.400 .heron__item.faux-block-link>.heron__item-body link density 0.378 -> 20.141
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch  6.200 .heron>.heron__item.faux-block-link link density 0.397 ->  3.739
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch 32.420 .heron__item.faux-block-link>.heron__item-body link density 0.368 -> 20.476
+2019-06-06 02:05:24 [readability.readability] DEBUG: Branch  6.210 .heron>.heron__item.faux-block-link link density 0.391 ->  3.782
+2019-06-06 02:05:24 [readability.readability] INFO: Top 5 : 133.371 .story-body>.story-body__inner
+2019-06-06 02:05:24 [readability.readability] INFO: Top 5 : 84.735 .column--primary>.story-body
+2019-06-06 02:05:24 [readability.readability] INFO: Top 5 : 20.476 .heron__item.faux-block-link>.heron__item-body
+2019-06-06 02:05:24 [readability.readability] INFO: Top 5 : 20.141 .heron__item.faux-block-link>.heron__item-body
+2019-06-06 02:05:24 [readability.readability] INFO: Top 5 :  6.354 .container--primary-and-secondary-columns.column-clearfix>.column--primary
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removed 133.371 .story-body__inner>ul.story-body__unordered-list with weight 25 cause it has too many links 1.000 for its weight 25.
+2019-06-06 02:05:24 [readability.readability] DEBUG: Removed 133.371 .story-body__inner>#bbccom_mpu_1_2_3.bbccom_slot.mpu-ad with weight 0 cause it has too short content length 11 without a single image.
+2019-06-06 02:05:24 [root] INFO: Going to insert Item{'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b"He Jiankui: Baby gene experiment 'foolish and dangerous' - B"
+                 b'BC News',
+ 'newsText': '\\n  \\n \\n \\n ![Jiankui '
+             'He](https://ichef.bbci.co.uk/news/320/cpsprodpb/176F6/production/_107209959_202297.jpg)\\n '
+             '\\n \\n \\n Image copyright\\n Jiankui He\\n \\n \\n \\n  The '
+             'first people to be gene-edited - a pair of baby twin girls - may '
+             'have been mutated in a way that shortens life expectancy, '
+             'research suggests.  Prof He Jiankui shocked the world when he '
+             'genetically altered the twins to try to give them protection '
+             'against HIV.  But a study in Nature Medicine shows people who '
+             'naturally have the mutation he was trying to recreate were '
+             'significantly more likely to die young.  Experts said Prof '
+             'He\\\'s actions were "very dangerous" and "foolish".  ## What '
+             'was Prof He trying to do?  Prof He was targeting a gene called '
+             'CCR5.  It is a set of genetic instructions that are important '
+             'for how the immune system functions.  However, they are also the '
+             'doorway that human immunodeficiency virus (HIV) walks through to '
+             'infect cells.  Mutations to CCR5 essentially lock the door and '
+             'give people resistance to HIV.  So, Prof He made embryos in an '
+             'IVF clinic and then used gene-editing technologies on them to '
+             'alter the CCR5 gene.  The resulting girls - known as Lulu and '
+             'Nana - were born last year.  \\n \\n \\n \\n  \\n \\n \\n Image '
+             'copyright\\n Getty Images\\n \\n \\n \\n \\n Image caption\\n '
+             '\\n The human immunodeficiency virus uses CCR5 to gain entry '
+             'into cells\\n \\n \\n \\n  ## What does this have to do with '
+             'life expectancy?  The problem is CCR5 has a bigger role in the '
+             'body than just making people vulnerable to HIV.  It is active in '
+             'the brain and in fighting off other infections, particularly '
+             'flu.  The study, at the University of California, Berkeley, '
+             'looked at nearly 410,000 people in the UK.  It showed those who '
+             'had only the mutated version of CCR5 were 20% more likely to die '
+             'before they turned 78.  "In this case, it is probably not a '
+             'mutation that most people would want to have," said Prof Rasmus '
+             'Nielsen, from UC Berkeley.  "You are actually, on average, worse '
+             'off having it."  Fellow researcher Dr Xinzhu Wei said the '
+             'gene-editing technology, known as Crispr, was still too risky to '
+             'be using on children.  "The Crispr technology is far too '
+             'dangerous to use right now for germ-line editing," she said.  ## '
+             'What does this mean for the twins?  The implications for Lulu '
+             'and Nana are still unclear.  "It is impossible to predict if the '
+             'mutations carried by the twin girls will have any effect," said '
+             'Prof Robin Lovell-Badge, from the Francis Crick Institute.  Not '
+             'everyone who carried the mutations in the study died young but '
+             'it was more likely.  And life expectancy depends on a complex '
+             'mix of the DNA you are born with and the world you live in.  To '
+             'further complicate things, Prof He mutated CCR5 in a similar '
+             'rather than identical way to people who have HIV resistance.  '
+             'Prof Lovell-Badge said the study "shows once more that He '
+             'Jiankui was foolish to choose CCR5 to mutate".  ## What was the '
+             'reaction to Prof He doing this?  There was universal '
+             'condemnation by scientists when Prof He made the announcement in '
+             'November.  Some described the experiment as "monstrous".  And he '
+             'was criticised for experimenting when the risks to otherwise '
+             'healthy children were unclear and for acting against Chinese '
+             'law.  There was also anger because HIV can be treated and there '
+             'was barely any risk of it being passed from the HIV-positive '
+             'father to his children.  The Chinese authorities investigated '
+             'and concluded that Prof He had acted illegally in pursuit of '
+             '"fame and fortune".  Prof He has always defended his experiments '
+             'and at a summit in Hong Kong said he was "proud" of his '
+             'gene-editing work.  _Follow James_on Twitter.  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/health-48496652'}
+2019-06-06 02:05:48 [scrapy.crawler] INFO: Received SIGINT, shutting down gracefully. Send again to force 
+2019-06-06 02:05:54 [scrapy.core.scraper] ERROR: Error processing {'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b"He Jiankui: Baby gene experiment 'foolish and dangerous' - B"
+                 b'BC News',
+ 'newsText': '\\n  \\n \\n \\n ![Jiankui '
+             'He](https://ichef.bbci.co.uk/news/320/cpsprodpb/176F6/production/_107209959_202297.jpg)\\n '
+             '\\n \\n \\n Image copyright\\n Jiankui He\\n \\n \\n \\n  The '
+             'first people to be gene-edited - a pair of baby twin girls - may '
+             'have been mutated in a way that shortens life expectancy, '
+             'research suggests.  Prof He Jiankui shocked the world when he '
+             'genetically altered the twins to try to give them protection '
+             'against HIV.  But a study in Nature Medicine shows people who '
+             'naturally have the mutation he was trying to recreate were '
+             'significantly more likely to die young.  Experts said Prof '
+             'He\\\'s actions were "very dangerous" and "foolish".  ## What '
+             'was Prof He trying to do?  Prof He was targeting a gene called '
+             'CCR5.  It is a set of genetic instructions that are important '
+             'for how the immune system functions.  However, they are also the '
+             'doorway that human immunodeficiency virus (HIV) walks through to '
+             'infect cells.  Mutations to CCR5 essentially lock the door and '
+             'give people resistance to HIV.  So, Prof He made embryos in an '
+             'IVF clinic and then used gene-editing technologies on them to '
+             'alter the CCR5 gene.  The resulting girls - known as Lulu and '
+             'Nana - were born last year.  \\n \\n \\n \\n  \\n \\n \\n Image '
+             'copyright\\n Getty Images\\n \\n \\n \\n \\n Image caption\\n '
+             '\\n The human immunodeficiency virus uses CCR5 to gain entry '
+             'into cells\\n \\n \\n \\n  ## What does this have to do with '
+             'life expectancy?  The problem is CCR5 has a bigger role in the '
+             'body than just making people vulnerable to HIV.  It is active in '
+             'the brain and in fighting off other infections, particularly '
+             'flu.  The study, at the University of California, Berkeley, '
+             'looked at nearly 410,000 people in the UK.  It showed those who '
+             'had only the mutated version of CCR5 were 20% more likely to die '
+             'before they turned 78.  "In this case, it is probably not a '
+             'mutation that most people would want to have," said Prof Rasmus '
+             'Nielsen, from UC Berkeley.  "You are actually, on average, worse '
+             'off having it."  Fellow researcher Dr Xinzhu Wei said the '
+             'gene-editing technology, known as Crispr, was still too risky to '
+             'be using on children.  "The Crispr technology is far too '
+             'dangerous to use right now for germ-line editing," she said.  ## '
+             'What does this mean for the twins?  The implications for Lulu '
+             'and Nana are still unclear.  "It is impossible to predict if the '
+             'mutations carried by the twin girls will have any effect," said '
+             'Prof Robin Lovell-Badge, from the Francis Crick Institute.  Not '
+             'everyone who carried the mutations in the study died young but '
+             'it was more likely.  And life expectancy depends on a complex '
+             'mix of the DNA you are born with and the world you live in.  To '
+             'further complicate things, Prof He mutated CCR5 in a similar '
+             'rather than identical way to people who have HIV resistance.  '
+             'Prof Lovell-Badge said the study "shows once more that He '
+             'Jiankui was foolish to choose CCR5 to mutate".  ## What was the '
+             'reaction to Prof He doing this?  There was universal '
+             'condemnation by scientists when Prof He made the announcement in '
+             'November.  Some described the experiment as "monstrous".  And he '
+             'was criticised for experimenting when the risks to otherwise '
+             'healthy children were unclear and for acting against Chinese '
+             'law.  There was also anger because HIV can be treated and there '
+             'was barely any risk of it being passed from the HIV-positive '
+             'father to his children.  The Chinese authorities investigated '
+             'and concluded that Prof He had acted illegally in pursuit of '
+             '"fame and fortune".  Prof He has always defended his experiments '
+             'and at a summit in Hong Kong said he was "proud" of his '
+             'gene-editing work.  _Follow James_on Twitter.  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/health-48496652'}
+Traceback (most recent call last):
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/agraj/KANIKA/generic_news_crawler/news_crawler/news_crawler/pipelines.py", line 120, in process_item
+    self.db[self.collection_name].insert_one(dict(item))
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 700, in insert_one
+    session=session),
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 614, in _insert
+    bypass_doc_val, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 602, in _insert_one
+    acknowledged, _insert_command, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1279, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/local/Cellar/python/3.7.2_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1611, in _tmp_session
+    s = self._ensure_session(session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1598, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in __start_session
+    server_session = self._get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1584, in _get_server_session
+    return self._topology.get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 429, in get_server_session
+    None)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 200, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2019-06-06 02:05:54 [root] INFO: Parsing URL: https://www.bbc.com/news/health-48495313
+2019-06-06 02:05:54 [urllib3.connectionpool] DEBUG: Starting new HTTPS connection (1): www.bbc.com:443
+2019-06-06 02:05:54 [urllib3.connectionpool] DEBUG: https://www.bbc.com:443 "GET /news/health-48495313 HTTP/1.1" 200 37655
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - header#orb-banner>#orb-header.orb-nav-pri.orb-nav-pri-white.orb-nav-empty
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .container-width-only>#bbccom_sponsor_section_1_2_3_4.bbccom_slot
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .story-body>.with-extracted-share-icons
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.mini-info-list__item>span#dna-comment-count___CPS__48495313.js-comment-count.comment-count
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--messengerdesktop.twite__channel-click-extracted--messengerdesktop.twite__list-elements
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--messengerdesktop.twite__channel-click-extracted--messengerdesktop.twite__list-elements>a.extracted__channel-link.extracted__channel-link--messengerdesktop
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengerdesktop>span.extracted__icon.extracted__icon--messengerdesktop
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengerdesktop>svg.extracted-svg.ex-messengerdesktop
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--email.twite__channel-click-extracted--email.twite__list-elements
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--desktop.twite__channel-out--email.twite__channel-click-extracted--email.twite__list-elements>a.extracted__channel-link.extracted__channel-link--email
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--email>span.extracted__icon.extracted__icon--email
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--email>svg.extracted-svg.ex-email
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--facebook.twite__channel-click-extracted--facebook.twite__list-elements>a.extracted__channel-link.extracted__channel-link--facebook
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--facebook>span.extracted__icon.extracted__icon--facebook
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--facebook>svg.extracted-svg.ex-facebook
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--whatsapp.twite__channel-click-extracted--whatsapp.twite__list-elements
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--whatsapp.twite__channel-click-extracted--whatsapp.twite__list-elements>a.extracted__channel-link.extracted__channel-link--whatsapp
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--whatsapp>span.extracted__icon.extracted__icon--whatsapp
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--whatsapp>svg.extracted-svg.ex-whatsapp
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--messengermobile.twite__channel-click-extracted--messengermobile.twite__list-elements
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--messengermobile.twite__channel-click-extracted--messengermobile.twite__list-elements>a.extracted__channel-link.extracted__channel-link--messengermobile
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--messengermobile>span.extracted__icon.extracted__icon--messengermobile
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--messengermobile>svg.extracted-svg.ex-messengermobile
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.sharetools>li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - li.twite__channel-out.twite__channel-out--mobile.twite__channel-out--twitter.twite__channel-click-extracted--twitter.twite__list-elements>a.extracted__channel-link.extracted__channel-link--twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.extracted__channel-link.extracted__channel-link--twitter>span.extracted__icon.extracted__icon--twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - span.extracted__icon.extracted__icon--twitter>svg.extracted-svg.ex-twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.twite__channels>li.twite__channel.twite__channel--twitter.twite__channel-click--twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.twite__channel-link>span.twite__icon.twite__icon--twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - #comp-comments-button.js-iframe-container.comments-button.ghost-column>a.comments-button__link.js-comments-button__link
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.comments-button__link.js-comments-button__link>span.comments-button__icon
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - a.comments-button__link.js-comments-button__link>span.js-comment-count.comments-button__count
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul.share__tools.share__tools--lightweight>li.share__tool.share__tool--twitter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .group.story-alsos.more-on-this-story>.group__header
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .group.related-links.more-on-this-story>.group__header
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .group.related-links--external.more-on-this-story>.group__header
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .unit__body>.unit__header
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - #page.configurable.story>.page__foot
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - #site-container>#core-navigation.navigation--footer
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - #core-navigation.navigation--footer>h2.navigation--footer__heading
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .direction>#orb-footer.orb-footer
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - #orb-footer.orb-footer>#navp-orb-footer-promo
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - #orb-aside.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>h2.orb-footer-lead
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - .orb-footer-inner>.orb-footer-primary-links
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - #orb-contentinfo.orb-nav-sec.b-r.b-g-p>.orb-footer-inner
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-terms
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-about
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-privacy
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-cookies
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-accessibility
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-parental
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-contact
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - ul>li.orb-footer-newsletter
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removing unlikely candidate - small>span.orb-footer-links
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch  7.440 figure.media-with-caption>.player-with-placeholder link density 0.000 ->  7.440
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch -23.780 .story-body__inner>figure.media-with-caption link density 0.000 -> -23.780
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch 84.670 .story-body>.story-body__inner link density 0.027 -> 82.402
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch 57.335 .column--primary>.story-body link density 0.026 -> 55.850
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch 32.690 .column--primary>.story-more link density 0.000 -> 32.690
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch  6.345 .container--primary-and-secondary-columns.column-clearfix>.column--primary link density 0.095 ->  5.739
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch  2.870 #comp-top-stories-promo.top-stories-promo>a.top-stories-promo-story link density 0.000 ->  2.870
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch -43.565 .column--secondary>#comp-top-stories-promo.top-stories-promo link density 0.911 -> -3.897
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch 32.400 .heron__item.faux-block-link>.heron__item-body link density 0.378 -> 20.141
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch  6.200 .heron>.heron__item.faux-block-link link density 0.397 ->  3.739
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch 32.420 .heron__item.faux-block-link>.heron__item-body link density 0.368 -> 20.476
+2019-06-06 02:05:54 [readability.readability] DEBUG: Branch  6.210 .heron>.heron__item.faux-block-link link density 0.391 ->  3.782
+2019-06-06 02:05:54 [readability.readability] INFO: Top 5 : 82.402 .story-body>.story-body__inner
+2019-06-06 02:05:54 [readability.readability] INFO: Top 5 : 55.850 .column--primary>.story-body
+2019-06-06 02:05:54 [readability.readability] INFO: Top 5 : 32.690 .column--primary>.story-more
+2019-06-06 02:05:54 [readability.readability] INFO: Top 5 : 20.476 .heron__item.faux-block-link>.heron__item-body
+2019-06-06 02:05:54 [readability.readability] INFO: Top 5 : 20.141 .heron__item.faux-block-link>.heron__item-body
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removed 82.402 .story-body__inner>#bbccom_mpu_1_2_3.bbccom_slot.mpu-ad with weight 0 cause it has too short content length 11 without a single image.
+2019-06-06 02:05:54 [readability.readability] DEBUG: Removed  7.440 .player-with-placeholder>.player-with-placeholder with weight 0 cause it has too short content length 11 without a single image.
+2019-06-06 02:05:54 [readability.readability] DEBUG: Not removing figure.media-with-caption>.player-with-placeholder of length 55: \n \n Media playback is unsupported on y...
+2019-06-06 02:05:54 [root] INFO: Going to insert Item{'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b"'Pumping heart patch' ready for human use - BBC News",
+ 'newsText': '\\n  \\n  \\n  '
+             '![](https://ichef.bbci.co.uk/images/ic/720x405/p072b98l.jpg)  '
+             '\\n  Media playback is unsupported on your device  \\n  \\n  '
+             'Media captionHeart breakthrough could save thousands of '
+             'lives\\n  A "pumping" patch containing millions of living, '
+             'beating stem cells could help repair the damage caused by a '
+             'heart attack, according to researchers.  Sewn on to the heart, '
+             'the 3cm (1in) by 2cm patch, grown in a lab from a sample of the '
+             "patient\\'s own cells, then turns itself into healthy working "
+             'muscle.  It also releases chemicals that repair and regenerate '
+             'existing heart cells.  Tests in rabbits show it appears safe, '
+             'Imperial College London experts told a leading heart conference '
+             'in Manchester.  Patient trials should start in the next two '
+             'years, the British Cardiovascular Society meeting heard.  A '
+             'heart attack happens when a clogged artery blocks blood flow to '
+             'the heart muscle, starving it of oxygen and nutrients.  This can '
+             "damage the heart\\'s pumping power and lead to incurable heart "
+             'failure.  Heart failure affects about 920,000 people in the UK.  '
+             '\\n \\n \\n \\n  \\n \\n \\n Image copyright\\n Prof Sian '
+             'Harding, Imperial College London\\n \\n \\n \\n  Researcher Dr '
+             'Richard Jabbour said: "One day, we hope to add heart patches to '
+             'the treatments that doctors can routinely offer people after a '
+             'heart attack.  "We could prescribe one of these patches '
+             'alongside medicines for someone with heart failure, which you '
+             'could take from a shelf and implant straight in to a person."  '
+             'Prof Metin Avkiran, from the British Heart Foundation, which '
+             'funded the research, said: "Heart failure is a debilitating and '
+             'life-changing condition with no cure, making everyday tasks '
+             'incredibly difficult.  "If we can patch the heart up and help it '
+             'heal, we could transform the outlook for these people."  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/health-48495313'}
+2019-06-06 02:06:20 [scrapy.crawler] INFO: Received SIGINT twice, forcing unclean shutdown
+2019-06-06 02:06:24 [scrapy.core.scraper] ERROR: Error processing {'author': b'https://www.facebook.com/bbcnews',
+ 'newsHeadline': b"'Pumping heart patch' ready for human use - BBC News",
+ 'newsText': '\\n  \\n  \\n  '
+             '![](https://ichef.bbci.co.uk/images/ic/720x405/p072b98l.jpg)  '
+             '\\n  Media playback is unsupported on your device  \\n  \\n  '
+             'Media captionHeart breakthrough could save thousands of '
+             'lives\\n  A "pumping" patch containing millions of living, '
+             'beating stem cells could help repair the damage caused by a '
+             'heart attack, according to researchers.  Sewn on to the heart, '
+             'the 3cm (1in) by 2cm patch, grown in a lab from a sample of the '
+             "patient\\'s own cells, then turns itself into healthy working "
+             'muscle.  It also releases chemicals that repair and regenerate '
+             'existing heart cells.  Tests in rabbits show it appears safe, '
+             'Imperial College London experts told a leading heart conference '
+             'in Manchester.  Patient trials should start in the next two '
+             'years, the British Cardiovascular Society meeting heard.  A '
+             'heart attack happens when a clogged artery blocks blood flow to '
+             'the heart muscle, starving it of oxygen and nutrients.  This can '
+             "damage the heart\\'s pumping power and lead to incurable heart "
+             'failure.  Heart failure affects about 920,000 people in the UK.  '
+             '\\n \\n \\n \\n  \\n \\n \\n Image copyright\\n Prof Sian '
+             'Harding, Imperial College London\\n \\n \\n \\n  Researcher Dr '
+             'Richard Jabbour said: "One day, we hope to add heart patches to '
+             'the treatments that doctors can routinely offer people after a '
+             'heart attack.  "We could prescribe one of these patches '
+             'alongside medicines for someone with heart failure, which you '
+             'could take from a shelf and implant straight in to a person."  '
+             'Prof Metin Avkiran, from the British Heart Foundation, which '
+             'funded the research, said: "Heart failure is a debilitating and '
+             'life-changing condition with no cure, making everyday tasks '
+             'incredibly difficult.  "If we can patch the heart up and help it '
+             'heal, we could transform the outlook for these people."  \\n',
+ 'newsUrl': 'https://www.bbc.com/news/health-48495313'}
+Traceback (most recent call last):
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/Users/agraj/KANIKA/generic_news_crawler/news_crawler/news_crawler/pipelines.py", line 120, in process_item
+    self.db[self.collection_name].insert_one(dict(item))
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 700, in insert_one
+    session=session),
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 614, in _insert
+    bypass_doc_val, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/collection.py", line 602, in _insert_one
+    acknowledged, _insert_command, session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1279, in _retryable_write
+    with self._tmp_session(session) as s:
+  File "/usr/local/Cellar/python/3.7.2_1/Frameworks/Python.framework/Versions/3.7/lib/python3.7/contextlib.py", line 112, in __enter__
+    return next(self.gen)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1611, in _tmp_session
+    s = self._ensure_session(session)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1598, in _ensure_session
+    return self.__start_session(True, causal_consistency=False)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1551, in __start_session
+    server_session = self._get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/mongo_client.py", line 1584, in _get_server_session
+    return self._topology.get_server_session()
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 429, in get_server_session
+    None)
+  File "/Users/agraj/KANIKA/generic_news_crawler/venv/lib/python3.7/site-packages/pymongo/topology.py", line 200, in _select_servers_loop
+    self._error_message(selector))
+pymongo.errors.ServerSelectionTimeoutError: localhost:27017: [Errno 61] Connection refused
+2019-06-06 02:06:24 [scrapy.core.engine] INFO: Closing spider (shutdown)
+2019-06-06 02:06:24 [scrapy.extensions.logstats] INFO: Crawled 12 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
