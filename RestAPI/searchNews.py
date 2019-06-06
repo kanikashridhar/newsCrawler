@@ -1,6 +1,6 @@
 # News Search Rest API
 
-from   flask import Flask,jsonify
+from   flask import Flask,jsonify,request
 from   flask_restful import Resource, Api
 from   flask_pymongo import PyMongo
 import os 
@@ -56,11 +56,28 @@ class news(Resource):
         ----------
         1. keyword: string to be searched in news text.
         '''
-        #results = mongo.db.news.find({'newsText': {'$regex': '.*' + keyword + '.*'}})
-        results = collection.find({"$text": {"$search": keyword}}).limit(10)
+        PAGE_SIZE = 5
+        try:
+           page = int(request.args.get("page"))
+        except:
+           page = 0
+
+        start = page * PAGE_SIZE
+        end = (page + 1) * PAGE_SIZE
+        text_results = collection.find({"$text": {"$search": keyword}}).limit(end)
+       
+        print("start is"+str(start)+" and end is: "+str(end))
+        totalRecords = text_results.count()
+        if (totalRecords < end):
+            end = totalRecords
+        
+        if (totalRecords<start):
+            start = totalRecords-1
+
+        doc_matches = text_results[start:end]
+
         json_results = []
-        for result in results:
-            print ("result is "+str(result))
+        for result in doc_matches:
             output = []
             json_results.append(
                                 {'author'      : result['author'], 

@@ -1,0 +1,8 @@
+scrapy
+readability-api
+readability-lxml
+html2text
+pymongo
+Flask
+Flask-RESTful
+flask_pymongo
