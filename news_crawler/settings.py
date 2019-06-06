@@ -99,7 +99,7 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
-MONGO_URI        = 'mongodb://articlecrawler:Us$m$123@ds231537.mlab.com:31537/newsarticles'
+MONGO_URI        = 'mongodb://{user}:{password}@ds231537.mlab.com:31537/newsarticles'
 MONGO_DB         = 'newsarticles'
 MONGO_COLLECTION = 'news'
 
