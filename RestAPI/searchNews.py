@@ -14,12 +14,10 @@ app.config['MONGO_DBNAME'] = 'newsarticles'
 mongo_user = os.environ.get('MONGOUSER', None)
 mongo_password = os.environ.get('MONGOPASSWD',None)
 
-print("mongo_password "+ str(mongo_password))
 mongo_uri = 'mongodb://{user}:{password}@ds231537.mlab.com:31537/newsarticles'
 
 
 app.config['MONGO_URI']    = mongo_uri.format(user=mongo_user,password=mongo_password)
-print("mongo_uri"+ str(app.config['MONGO_URI']))
 
 #mongo_collection = 'news'
 
@@ -57,20 +55,20 @@ class news(Resource):
         try:
            page_num = int(request.args.get("page"))
         except:
-           page_num = 0
+           page_num = 1
 
         skips = page_size * (page_num - 1)
         text_results = collection.find({"$text": {"$search": keyword}}).skip(skips).limit(page_size)
         json_results = []
 
         for result in text_results:
-            output = []
             json_results.append(
-                                {'author'      : result['author'], 
-                                 'Title'       : result['newsHeadline'], 
-                                 'Link'        : result['newsUrl'],
-                                 'article text': result['newsText']
-                                }
+                                  { 
+                                    'author'      : result['author'], 
+                                    'Title'       : result['newsHeadline'], 
+                                    'Link'        : result['newsUrl'],
+                                    'article text': result['newsText']
+                                  }
                                 )
  
         return jsonify({'result' : json_results})
@@ -79,4 +77,4 @@ class news(Resource):
 api.add_resource(news, '/news/<string:keyword>')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

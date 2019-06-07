@@ -4,7 +4,7 @@ import scrapy
 from   scrapy.spiders import CrawlSpider, Rule
 from   scrapy.linkextractors import LinkExtractor
 from   news_crawler.items import NewsItem
-import json, os, logging
+import json, os, logging, re
 
 class NewsSpider(CrawlSpider):
     '''
@@ -75,7 +75,7 @@ class NewsSpider(CrawlSpider):
                 os.makedirs('Output/')
             self.urlFile = open(visitedUrlFile, 'a')
 
-    def __init__(self):
+    def __init__(self,filename='',*args,**kwargs):
         '''
         DESCRIPTION:
         ------------
@@ -83,8 +83,13 @@ class NewsSpider(CrawlSpider):
         '''
 
         # File which defines rules for extracting desired
-        # data from BBC News website.
-        self.ruleFile = json.load(open('rules.json'))
+        # data from News website.
+        #self.ruleFile = json.load(open('rules.json'))
+        #self.ruleFile = filename
+
+        self.ruleFile = json.load(open(filename))
+        logging.info("RuleFile is "+ filename)
+
         self.allowed_domains = self.ruleFile['allowed_domains']
         self.start_urls = self.ruleFile['start_urls']
 
@@ -92,6 +97,53 @@ class NewsSpider(CrawlSpider):
         self.readVisitedURLS()
 
         super(NewsSpider, self).__init__()
+
+    def getTitle(self,hxs):
+        '''
+        DESCRIPTION:
+        -----------
+        This function fetches the title of news article being crawled.
+        PARAMETERS:
+        -----------
+        1. hxs: Web page selector of news article being crawled.
+        RETURNS:
+        --------
+        title of news article being crawled or an empty string if no
+        title is fetched from web page.
+        '''
+
+        for xpath in self.ruleFile['paths']['title'] :
+            logging.info("xpath for title is " + xpath)
+            title= hxs.xpath(xpath).extract()
+            if title : 
+                return re.sub("- BBC Sport$","",title[0]) 
+        
+        if not title:
+            return ''
+    
+    def getAuthor(self,hxs):
+        '''
+         DESCRIPTION:
+         -----------
+         This function fetches the title of news article being crawled.
+         PARAMETERS:
+         -----------
+         1. hxs: Web page selector of news article being crawled.
+         RETURNS:
+         --------
+         title of news article being crawled or an empty string if no
+         title is fetched from web page.
+        '''
+
+        for xpath in self.ruleFile['paths']['author'] :
+            #logging.info("xpath for title is " + xpath)
+            author= hxs.xpath(xpath).extract()
+            if author : 
+                return author
+        
+        if not author:
+            return ''
+        
 
     def parseItems(self, response):
         '''
@@ -113,24 +165,11 @@ class NewsSpider(CrawlSpider):
                 newsItem = NewsItem()
                 hxs    = scrapy.Selector(response)   #Webpage selector 
 
-                #Fetch URL
+                #Fetch URL, title and author
                 newsItem['newsUrl'] = response.url   
-
-                #Fetch title
-                title = hxs.xpath(self.ruleFile['paths']['title'][0]).extract()[0]
-                if title:
-                    #newsItem['newsHeadline'] = title.encode('ascii', 'ignore')
-                    newsItem['newsHeadline'] = title
-                else :
-                    newsItem['newsHeadline'] = ''
+                newsItem['newsHeadline'] = self.getTitle(hxs)
+                newsItem['author'] = self.getAuthor(hxs)
                 
-                # Fetch News Author
-                author = hxs.xpath(self.ruleFile['paths']['author'][0]).extract()
-                if author:
-                    newsItem['author'] = author
-                else:
-                    newsItem['author'] = ''
-
                 # Write visited url tp self.urlFile
                 self.urlFile.write(str(response.url) + '\n')
 

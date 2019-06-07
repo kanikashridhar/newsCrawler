@@ -11,7 +11,15 @@
 		}
 	],
 	"paths": {
-        "title" : ["//title/text()"],
-        "author" : [".//div[@class='gel-flag__body']/p[@class='gel-long-primer']/text()"]
+	"title" : [
+		   ".//div[@id='responsive-story-page']/article/h1[@class='story-headline gel-trafalgar-bold ']/text()",
+		   "//title/text()"
+		  ],
+	"author" : [
+		    ".//div[@class='gel-flag__body']/p[@class='gel-long-primer']/text()"
+                   ]
 	}
 }
+
+
+

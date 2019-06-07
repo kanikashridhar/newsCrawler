@@ -120,7 +120,7 @@ class MongoPipeline(object):
                 valid = False
                 raise DropItem('News Item dropped, missing ' + data)
         if valid:
-            logging.info("Going to insert Item"+ str(item))
+            #logging.info("Going to insert Item"+ str(item))
             
             try:
                 self.db[self.mongo_collection].insert(dict(item))
