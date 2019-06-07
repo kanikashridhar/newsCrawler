@@ -26,7 +26,6 @@ print("mongo_uri"+ str(app.config['MONGO_URI']))
 api         = Api(app)
 mongo       = PyMongo(app)
 collection  = mongo.db.news
-print("mongo collection"+ str(collection))
 
 
 collection.create_index([
@@ -41,10 +40,7 @@ collection.create_index([
         }
        )
 
-class news(Resource):
-    #def json(self):
-    #    return {'name':self.name,'price':self.price,'store_id':self.store_id}
-    
+class news(Resource):  
 
     def get(self, keyword):
         '''
@@ -56,28 +52,18 @@ class news(Resource):
         ----------
         1. keyword: string to be searched in news text.
         '''
-        PAGE_SIZE = 5
-        try:
-           page = int(request.args.get("page"))
-        except:
-           page = 0
-
-        start = page * PAGE_SIZE
-        end = (page + 1) * PAGE_SIZE
-        text_results = collection.find({"$text": {"$search": keyword}}).limit(end)
-       
-        print("start is"+str(start)+" and end is: "+str(end))
-        totalRecords = text_results.count()
-        if (totalRecords < end):
-            end = totalRecords
         
-        if (totalRecords<start):
-            start = totalRecords-1
+        page_size = 5
+        try:
+           page_num = int(request.args.get("page"))
+        except:
+           page_num = 0
 
-        doc_matches = text_results[start:end]
-
+        skips = page_size * (page_num - 1)
+        text_results = collection.find({"$text": {"$search": keyword}}).skip(skips).limit(page_size)
         json_results = []
-        for result in doc_matches:
+
+        for result in text_results:
             output = []
             json_results.append(
                                 {'author'      : result['author'], 
