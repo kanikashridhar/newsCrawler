@@ -84,9 +84,6 @@ class NewsSpider(CrawlSpider):
 
         # File which defines rules for extracting desired
         # data from News website.
-        #self.ruleFile = json.load(open('rules.json'))
-        #self.ruleFile = filename
-
         self.ruleFile = json.load(open(filename))
         logging.info("RuleFile is "+ filename)
 
