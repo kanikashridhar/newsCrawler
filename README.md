@@ -21,8 +21,7 @@ Crawler using Scrapy + Readability + MongoDB (to store documents)
     5. Pagination:- Five articles will be returned on each search page. User can specify the page number in the search URL.
 
 
-#how to run
-## Option 1 - Without Docker
+#how to run the spider
 * Install Python 3.x if not already
 * Create and activate virtual env
 ```
