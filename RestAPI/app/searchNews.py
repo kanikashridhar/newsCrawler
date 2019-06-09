@@ -9,17 +9,16 @@ import json
 
 # Connecting to MongoDB containing the crawled BBC News Articles.
 app    = Flask(__name__)
-app.config['MONGO_DBNAME'] = 'newsarticles'
+
 
 mongo_user = os.environ.get('MONGOUSER', None)
 mongo_password = os.environ.get('MONGOPASSWD',None)
-
 mongo_uri = 'mongodb://{user}:{password}@ds231537.mlab.com:31537/newsarticles'
-print("mongo_uri" + str(mongo_uri))
+mongo_uri.format(user=mongo_user,password=mongo_password)
 
-app.config['MONGO_URI']    = mongo_uri.format(user=mongo_user,password=mongo_password)
 
-#mongo_collection = 'news'
+app.config['MONGO_URI']    =  mongo_uri.format(user=mongo_user,password=mongo_password)
+app.config['MONGO_DBNAME'] = 'newsarticles'
 
 api         = Api(app)
 mongo       = PyMongo(app)
@@ -35,13 +34,14 @@ collection.create_index([
         weights={
            'newsText':10,
            'newsHeadline':25
-        }
+         }
        )
+
 
 class news(Resource):  
 
-    def get(self, keyword):
-        '''
+   def get(self):
+      '''
         DESCRIPTION:
         ------------
         GET news articles, where keyword appears in news article text.
@@ -49,19 +49,27 @@ class news(Resource):
         PARAMETERS:
         ----------
         1. keyword: string to be searched in news text.
-        '''
+      '''
+      page_size = 5
+      try:
+         page_num = int(request.args.get("page"))
+      except:
+         page_num = 1
+
+      try:
+         keyword = request.args.get("searchkey",None)
+         if not keyword:
+             return jsonify({'result':'Please Enter a valid Keyword'})
+      except:
+         return jsonify({'result':'Please Enter a valid Keyword'})
         
-        page_size = 5
-        try:
-           page_num = int(request.args.get("page"))
-        except:
-           page_num = 1
+      skips = page_size * (page_num - 1)
+      next_page = page_num + 1
+      text_results = collection.find({"$text": {"$search": keyword}}).skip(skips).limit(page_size)
+      json_results = []
 
-        skips = page_size * (page_num - 1)
-        text_results = collection.find({"$text": {"$search": keyword}}).skip(skips).limit(page_size)
-        json_results = []
-
-        for result in text_results:
+      for result in text_results:
+            print("total records ")
             json_results.append(
                                   { 
                                     'author'      : result['author'], 
@@ -70,11 +78,14 @@ class news(Resource):
                                     'article text': result['newsText']
                                   }
                                 )
- 
-        return jsonify({'result' : json_results})
+     
+      #if no more records are left to be displayed, set the next_page as 1
+      if text_results.count(True) < page_size:
+         next_page=1
 
+      return jsonify({'next_page':next_page,'result' : json_results})
 
-api.add_resource(news, '/news/<string:keyword>')
+api.add_resource(news, '/news')
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
