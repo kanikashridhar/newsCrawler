@@ -16,7 +16,7 @@ Crawler using Scrapy + Readability + MongoDB (to store documents)
     3. Database:- News articles crawled are stored in Mongo Database hosted at mLab (https://mlab.com/) for subsequent search and retrieval.
 
     4. API:- RestAPI is provided to access the content in the mongo database using a keyword search for the articles. 
-    [Text index has been created on headline and article text fields to expedite the search process]
+    [Text search index has been created on headline and article text fields to optimize the search process]
 
     5. Pagination:- Five articles will be returned on each search page. User can specify the page number in the search URL.
 
