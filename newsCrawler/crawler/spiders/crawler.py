@@ -3,7 +3,7 @@
 import scrapy
 from   scrapy.spiders import CrawlSpider, Rule
 from   scrapy.linkextractors import LinkExtractor
-from   news_crawler.items import NewsItem
+from   crawler.items import NewsItem
 import json, os, logging, re
 
 class NewsSpider(CrawlSpider):

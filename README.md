@@ -35,7 +35,7 @@ export MONGOPASSWD=<passwd>
 * Run the scrapy crawler
 
 ```
-scrapy crawl crawler filename=rules.json
+scrapy crawl crawler -a filename=rules.json
 ```
 
 The crawler typically takes a long time to crawl the website - depends on the site and the pages available to crawl.

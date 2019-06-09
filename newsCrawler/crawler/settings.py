@@ -2,7 +2,7 @@ import os
 from datetime import datetime
 # -*- coding: utf-8 -*-
 
-# Scrapy settings for news_crawler project
+# Scrapy settings for crawler project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -11,14 +11,14 @@ from datetime import datetime
 #     https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'news_crawler'
+BOT_NAME = 'crawler'
 
-SPIDER_MODULES = ['news_crawler.spiders']
-NEWSPIDER_MODULE = 'news_crawler.spiders'
+SPIDER_MODULES = ['crawler.spiders']
+NEWSPIDER_MODULE = 'crawler.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'news_crawler (+http://www.yourdomain.com)'
+#USER_AGENT = 'crawler (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -49,13 +49,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://doc.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'news_crawler.middlewares.NewsCrawlerSpiderMiddleware': 543,
+#    'crawler.middlewares.NewsCrawlerSpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://doc.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'news_crawler.middlewares.NewsCrawlerDownloaderMiddleware': 543,
+#    'crawler.middlewares.NewsCrawlerDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -67,15 +67,15 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'news_crawler.pipelines.NewsCrawlerPipeline': 300,
+#    'crawler.pipelines.NewsCrawlerPipeline': 300,
 #}
 
 ITEM_PIPELINES = {
-    'news_crawler.pipelines.NewsCrawlerPipeline':100,
-    'news_crawler.pipelines.NewsTextPipeline':200,
-    'news_crawler.pipelines.DropIfEmptyPipeline': 300,
-    'news_crawler.pipelines.DuplicatesPipeline': 400,
-    'news_crawler.pipelines.MongoPipeline': 500,
+    'crawler.pipelines.NewsCrawlerPipeline':100,
+    'crawler.pipelines.NewsTextPipeline':200,
+    'crawler.pipelines.DropIfEmptyPipeline': 300,
+    'crawler.pipelines.DuplicatesPipeline': 400,
+    'crawler.pipelines.MongoPipeline': 500,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
