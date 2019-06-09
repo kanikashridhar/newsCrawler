@@ -1,10 +1,4 @@
-# newsCrawler
-A newsCrawler in Python+Mongo+Flask
-
-#set Env variables
-export MONGOUSER=""; export MONGOPASSWD=""
-
-#News Crawler
+# News Website Crawler
 Crawler using Scrapy + Readability + MongoDB (to store documents)
 
 
@@ -21,8 +15,7 @@ Crawler using Scrapy + Readability + MongoDB (to store documents)
     5. Pagination:- Five articles will be returned on each search page. User can specify the page number in the search URL.
 
 
-#how to run
-## Option 1 - Without Docker
+# how to run the spider
 * Install Python 3.x if not already
 * Create and activate virtual env
 ```
@@ -47,9 +40,7 @@ export MONGOPASSWD=<passwd>
 scrapy crawl crawler filename=rules.json
 
 The command will take long (in hours). It is advisable to execute the command in background.
-
 Meanwhile user can see the Logs in Log folder to check the progress of the spider execution.
-
 A "visited_urls.txt" which is dynamically created in Output folder, represents already scraped URLs. The purpose of this file is to avoid scraping same pages.
 
 ```
@@ -77,9 +68,6 @@ c) "rules": [
     
 Here, User can specify which all links are allowed to be scraped. A "deny" parameter similar to allow can be used to specify which all links need to be removed from the scraping list.
 
-Callback is a fixed callback function.
-
-
 d) "paths": {
    "title" : [
 		   ".//div[@id='responsive-story-page']/article/h1[@class='story-headline gel-trafalgar-bold ']/text()",
@@ -90,7 +78,7 @@ d) "paths": {
                    ]
 	}
 
-Paths defines the xpath configurations to be used in order to fetch author and title from the scraped page.
+Paths defines the xpath configurations to be used to fetch the author and title information from the scraped page.
 ```
 
 # Executing RestAPI
@@ -125,11 +113,12 @@ python app/searchNews.py
 * The API can be accessed at
 
 ```
-http://127.0.0.1:5000/<keyword>?page=<page_num>
+[http://localhost:5000/news?searchkey=keyword&page=page_number ](http://127.0.0.1:5000/news?searchkey=keyword&page=page_number)
 
-replace <keyword> with the actual keyword to be searched in the database.
 
-replace <page_num> with the integer value of the page for which user wants to see the results. By default, the page num is 1. 
+Replace "keyword" with the actual keyword to be searched in the database.
+Replace "page_number" is a integer page number value.By default, the page num is 1. A maximum of 5 articles can be seen on each page.
+
 ```
 ## Option-2  Using Docker
 
@@ -150,3 +139,6 @@ docker run --env MONGOUSER=<username>  --env MONGOPASSWD=<password> -p 5000:5000
 ```
 
 This will start the server and you can access the API by browsing to [http://localhost:5000/news?searchkey=keyword&page=page_number ](http://127.0.0.1:8000/news/<keyword>?page=<page_num>)
+
+Replace "keyword" with the actual keyword to be searched in the database.
+Replace "page_number" is a integer page number value.By default, the page num is 1. A maximum of 5 articles can be seen on each page.
