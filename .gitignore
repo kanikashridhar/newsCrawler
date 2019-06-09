@@ -1,7 +1,8 @@
 *.pyc
 *.vscode
-venv/*
-Log/*
-Output/*
+news_crawler/venv/*
+news_crawler/Log/*
+news_crawler/Output/*
+news_crawler/DockerBackup
 static/*
 .DS_Store

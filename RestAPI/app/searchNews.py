@@ -15,7 +15,7 @@ mongo_user = os.environ.get('MONGOUSER', None)
 mongo_password = os.environ.get('MONGOPASSWD',None)
 
 mongo_uri = 'mongodb://{user}:{password}@ds231537.mlab.com:31537/newsarticles'
-
+print("mongo_uri" + str(mongo_uri))
 
 app.config['MONGO_URI']    = mongo_uri.format(user=mongo_user,password=mongo_password)
 
@@ -77,4 +77,4 @@ class news(Resource):
 api.add_resource(news, '/news/<string:keyword>')
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0")
