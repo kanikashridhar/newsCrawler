@@ -64,12 +64,11 @@ class news(Resource):
          return jsonify({'result':'Please Enter a valid Keyword'})
         
       skips = page_size * (page_num - 1)
-      next_page = page_num + 1
+      nextPage = page_num + 1
       text_results = collection.find({"$text": {"$search": keyword}}).skip(skips).limit(page_size)
       json_results = []
 
       for result in text_results:
-            print("total records ")
             json_results.append(
                                   { 
                                     'author'      : result['author'], 
@@ -79,11 +78,11 @@ class news(Resource):
                                   }
                                 )
      
-      #if no more records are left to be displayed, set the next_page as 1
+      #if no more records are left to be displayed, set the nextPage as 1
       if text_results.count(True) < page_size:
-         next_page=1
+         nextPage=1
 
-      return jsonify({'next_page':next_page,'result' : json_results})
+      return jsonify({'nextPage':nextPage,'result' : json_results})
 
 api.add_resource(news, '/news')
 
