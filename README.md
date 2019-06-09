@@ -138,7 +138,7 @@ docker build -t newsapi:v1.0 .
 docker run --env MONGOUSER=<username>  --env MONGOPASSWD=<password> -p 5000:5000 newsapi:v1.0
 ```
 
-This will start the server and you can access the API by browsing to [http://localhost:5000/news?searchkey=keyword&page=page_number ](http://127.0.0.1:8000/news/<keyword>?page=<page_num>)
+This will start the server and you can access the API by browsing to [http://localhost:5000/news?searchkey=keyword&page=page_number ](http://127.0.0.1:8000/news?searchkey=keyword&page=page_number)
 
 Replace "keyword" with the actual keyword to be searched in the database.
 Replace "page_number" is a integer page number value.By default, the page num is 1. A maximum of 5 articles can be seen on each page.
