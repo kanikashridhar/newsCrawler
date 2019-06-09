@@ -50,22 +50,25 @@ class news(Resource):
         ----------
         1. keyword: string to be searched in news text.
       '''
-      page_size = 5
+      page_size = 10
       try:
          page_num = int(request.args.get("page"))
       except:
          page_num = 1
 
       try:
-         keyword = request.args.get("searchkey",None)
-         if not keyword:
-             return jsonify({'result':'Please Enter a valid Keyword'})
+         keyword = request.args.get("searchkey",None)            
       except:
          return jsonify({'result':'Please Enter a valid Keyword'})
-        
+      
       skips = page_size * (page_num - 1)
       nextPage = page_num + 1
-      text_results = collection.find({"$text": {"$search": keyword}}).skip(skips).limit(page_size)
+
+      if keyword:
+         text_results = collection.find({"$text": {"$search": keyword}}).skip(skips).limit(page_size)
+      else:  
+         text_results = collection.find().skip(skips).limit(page_size)
+
       json_results = []
 
       for result in text_results:
